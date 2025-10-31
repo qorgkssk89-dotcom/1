@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>glasslock</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      .wrap {
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 20px;
+        z-index: 10;
+      }
+
+      .top {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        background: transparent;
+        padding: 30px;
+      }
+      .logo a {
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+      }
+      .logo img {
+        width: 150px;
+      }
+      .shopping {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .shopping img {
+        width: 20px;
+      }
+      .right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 20px;
+      }
+      .cart {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        border: 1px solid #333;
+        border-radius: 20px;
+        /*color:*/
+        font-size: 14px;
+        text-decoration: none;
+      }
+      .cart img {
+        width: 16px;
+      }
+      /*삼단바*/
+
+      label {
+        z-index: 101;
+        display: block;
+        cursor: pointer;
+      }
+      label span {
+        display: block;
+        width: 35px;
+        height: 5px;
+        background: #333;
+        margin: 6px 0;
+        transition: 0.5s;
+      }
+      #menu:checked ~ label span.bar1 {
+        transform: translate(0, 11px) rotate(45deg);
+      }
+      #menu:checked ~ label span.bar2 {
+        opacity: 0;
+      }
+      #menu:checked ~ label span.bar3 {
+        transform: translate(0, -11px) rotate(-45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="top">
+        <ul class="logo">
+          <li>
+            <a href="#"
+              ><img
+                src="https://www.glasslock.co.kr/pages/layout/_glasslock/images/common/logo.svg"
+                alt=""
+            /></a>
+          </li>
+        </ul>
+        <div class="right">
+          <ul class="shopping">
+            <li>
+              <a href="#"
+                ><img
+                  src="https://www.glasslock.co.kr/pages/layout/_glasslock/images/common/ico_topmall_cart_bk.svg"
+                  alt="장바구니"
+                /><span>글라스락몰</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">한국어</a>
+            </li>
+          </ul>
+
+          <label for="menu">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+            <span class="bar3"></span>
+          </label>
+        </div>
+      </div>
+      <div class="md">
+        <ul>
+          <li>
+            <img src="" alt="" />
+            <h1></h1>
+            <p></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

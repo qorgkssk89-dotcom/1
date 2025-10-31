@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      p {
+        width: 100px;
+        height: 100px;
+        background: #ccc;
+        /*transition-property: width, height;
+        transition-duration: 1s, 2s;
+        transition-timing-function: ease;
+        transition-delay: 1s, -1s;*/
+        /*transition: width 1s ease 1s, height 2s ease -1s;<--입력 값 칸이 줄어든다 대신 초를 기입해줘야한다*/
+        transition: 1s;
+      }
+      p:hover {
+        width: 200px; /*가로*/
+        height: 200px; /*세로*/
+      } /*hover동작시 부모 자식간에만 가능*/
+      ul {
+        list-style: none;
+      }
+      ul li {
+        width: 100px;
+        height: 50px;
+        background: #ccc;
+        margin: 20px;
+        transition: 2s;
+      }
+      ul:hover li {
+        width: 500px;
+      }
+      ul li:nth-child(2) {
+        transition-timing-function: ease; /*천천히시작*/
+      }
+      ul li:nth-child(3) {
+        transition-timing-function: ease-in; /*천천히시작->점점빨라짐*/
+      }
+      ul li:nth-child(4) {
+        transition-timing-function: ease-out; /*빨리시작->점점느려지면서멈춤*/
+      }
+      ul li:nth-child(5) {
+        transition-timing-function: ease-in-out; /*천천히 시작 → 빨라졌다가 → 천천히 끝남*/
+      }
+      ul li:nth-child(6) {
+        transition-timing-function: linear; /*처음부터 끝까지 속도가 일정*/
+      }
+      ul li:nth-child(7) {
+        transition-timing-function: cubic-bezier(
+          0.075,
+          0.82,
+          0.165,
+          1
+        ); /*빠르게 시작해서 부드럽게 끝나는 독특한 곡선을 만들 수 있음*/
+      }
+    </style>
+  </head>
+  <body>
+    <p></p>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>

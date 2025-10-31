@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>그리드</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .grid-container {
+        display: grid;
+        width: 1200px;
+        margin: 0;
+
+        grid-template-columns: 200px 200px 400px 200px 200px;
+        grid-template-areas:
+          "hlog menu menu menu menu"
+          "slide slide slide slide slide"
+          "slide slide slide slide slide"
+          "c1 c1 c3 c4 c4"
+          "flogo flogo flogo flogo sns"
+          "copyright copyright copyright copyright sns";
+        grid-auto-rows: 100px 150px 150px 200px 50px 50px;
+      }
+
+      .grid-container .hlog {
+        grid-area: hlog;
+        background: #aaa;
+      }
+      .grid-container .menu {
+        grid-area: menu;
+        background: #bbb;
+      }
+      .grid-container .slide {
+        grid-area: slide;
+        background: #ccc;
+      }
+      .grid-container .c1 {
+        grid-area: c1;
+        background: #ddd;
+      }
+      .grid-container .c3 {
+        grid-area: c3;
+        background: #eee;
+      }
+      .grid-container .c4 {
+        grid-area: c4;
+        background: #fff;
+      }
+      .grid-container .flogo {
+        grid-area: flogo;
+        background: #aaa;
+      }
+      .grid-container .copyright {
+        grid-area: copyright;
+        background: #bbb;
+      }
+      .grid-container .sns {
+        grid-area: sns;
+        background: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="hlog">1</div>
+      <div class="menu">2</div>
+      <div class="slide">3</div>
+      <div class="c1">4</div>
+      <div class="c3">5</div>
+      <div class="c4">6</div>
+      <div class="flogo">7</div>
+      <div class="copyright">8</div>
+      <div class="sns">9</div>
+    </div>
+  </body>
+</html>

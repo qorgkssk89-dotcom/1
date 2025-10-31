@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mostly Fluid</title>
+    <style>
+      @font-face {
+        font-family: "NanumBarunGothic";
+        src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+        font-weight: 400;
+        font-display: swap;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #con {
+        width: 80%;
+        margin: 0 auto;
+        max-width: 940px;
+        display: flex;
+        align-items: flex-start;
+
+        gap: 15px;
+        font-family: "NanumBarunGothic", sans-serif;
+        border: 1px solid #ccc;
+      }
+      #con > div img {
+        width: 100%;
+        border: 1px solid #ccc;
+        object-fit: cover;
+      }
+      #con > div .txt {
+        position: relative;
+        font-size: 15px;
+        word-break: keep-all;
+      }
+      #con > div .txt h4 {
+        font-size: 14px;
+        padding-bottom: 10px;
+      }
+      #con > div .txt p {
+        font-size: 12px;
+        line-height: 1.6;
+        color: #333;
+      }
+      @media screen and (max-width: 1024px) {
+        #con {
+          flex-direction: column;
+          align-items: center;
+          width: 95%;
+        }
+        #con > div .txt {
+          font-size: 12px;
+        }
+        #con > div image {
+          width: 100%;
+        }
+        #con > div .txt h4 {
+          font-size: 14px;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        #con {
+          gap: 20px;
+        }
+        #con > div {
+          width: calc(50% - 10px);
+        }
+      }
+      @media screen and (max-width: 500px) {
+        #con > div {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="con">
+      <img
+        src="https://www.shinsegaefood.com/uimages/2025/10/16/%EC%A0%9C%EB%AA%A9-%EC%97%86%EC%9D%8C-1.jpg"
+        alt=""
+      />
+
+      <div class="txt">
+        <h4>베이커리 명가 '신세계푸드' 와 베이커리 '박준서 명장'이 만나다</h4>
+        <p>
+          "신세계푸드, SSG닷컴 오프라인 페스타 ‘美지엄’에 베이커리 박준서<br />
+          명장 부스 선보여 박준서 명장, 대한민국 제과제?빵 명장으로 주요
+          <br />베이커리 대회 다수 수상 경력 신세계푸드, 박준서 명장 베이커리
+          5종 <br />선보여… 행사 현장 QR통해 최대 44% 할인 제공"
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

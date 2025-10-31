@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <p>red</p>
+    <p>blue</p>
+    <p>gray</p>
+    <p>green</p>
+    <p>pink</p>
+    <script>
+      /*const paragraphs = document.querySelectorAll("p");
+      const colors = ["red", "blue", "gray", "green"];
+      paragraphs.forEach((p, index) => {
+        p.style.backgroundColor = colors[index];
+      });*/ //텍스트와 상관없이 색 지정 가능
+      document.querySelectorAll("p").forEach(function (v, k) {
+        v.style.backgroundColor = v.innerText;
+      }); //텍스트가 색 이름이어야 함
+    </script>
+  </body>
+</html>

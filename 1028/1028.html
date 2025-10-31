@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#">photo1</a></li>
+      <li><a href="#">photo2</a></li>
+      <li><a href="#">photo3</a></li>
+    </ul>
+    <p><img src="../images/photo1.jpg" alt="" /></p>
+    <script>
+      let photo = document.getElementsByTagName("li")[0]; //선택자
+      let photo1 = document.getElementsByTagName("li")[1];
+      let photo2 = document.getElementsByTagName("li")[2];
+      let photoImg = document.querySelector("p img"); //같은이름사용불가photoImg 사용querySelector에 제일 첫번째 photo을 인식
+      photo.onclick = function (e) {
+        e.preventDefault();
+        photoImg.src = "../images/photo1.jpg"; //photo라는 변수를 써서 짧게명령
+        photo1.onclick = function (e) {
+          e.preventDefault();
+          photoImg.src = "../images/photo2.jpg";
+        };
+        photo2.onclick = function (e) {
+          e.preventDefault();
+          photoImg.src = "../images/photo2.jpg";
+        };
+        photo3.onclick = function (e) {
+          e.preventDefault();
+          photoImg.src = "../images/photo3.jpg";
+        };
+      };
+    </script>
+  </body>
+</html>

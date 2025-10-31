@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>집 아이콘 애니메이션</title>
+    <style>
+      svg {
+        width: 1500px;
+        height: 500px;
+        border: 1px solid;
+      }
+      path {
+        fill: none;
+        stroke: #000;
+        stroke-width: 10;
+        stroke-dasharray: 3000;
+        stroke-dashoffset: 3000;
+        animation: draw 3s ease forwards;
+      }
+
+      @keyframes draw {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg>
+      <path
+        d="M541 229.16L512 205.22V56a24 24 0 0 0-24-24h-88a24 24 0 0 0-24 24v51.54L314.31 43a35.9 35.9 0 0 0-52.62 0L35 229.16a12 12 0 0 0-1.6 16.9l25.5 31a12 12 0 0 0 16.9 1.6l27.1-21.3V456a24 24 0 0 0 24 24h144a24 24 0 0 0 24-24V360h64v96a24 24 0 0 0 24 24h144a24 24 0 0 0 24-24V257.36l27.1 21.3a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.6-16.9z"
+      />
+    </svg>
+  </body>
+</html>

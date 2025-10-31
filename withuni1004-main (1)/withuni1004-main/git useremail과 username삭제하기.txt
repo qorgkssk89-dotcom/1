@@ -1,0 +1,2 @@
+git config --unset --global user.email
+git config --unset --global user.name

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0910</title>
+    <style>
+      #div1 {
+        width: 200px;
+        height: 200px;
+        border: 1px solid;
+        perspective: 400px;
+      }
+      #div2 {
+        height: 100px;
+        background: red;
+        transform: rotateX(60deg);
+        transform-style: preserve-3d;
+      }
+      #div3 {
+        padding: 50px;
+        background: yellow;
+        transform: rotateY(60deg);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="div1">
+      <p>11111</p>
+      <div id="div2">
+        <p>22222</p>
+        <div id="div3">
+          <p>33333</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

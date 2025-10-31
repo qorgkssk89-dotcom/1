@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>삼성중공업</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      label {
+        display: block;
+        width: 50px;
+        height: 50px;
+        position: relative;
+        margin: 100px;
+        cursor: pointer;
+        border: 0.5s;
+      }
+      label span {
+        position: absolute;
+        display: block;
+        height: 2px;
+        background: #111;
+        border-radius: 2px;
+        right: 0;
+        transition: 0.5s;
+      }
+      label .bar1 {
+        width: 50px;
+        top: 18px;
+      }
+      label .bar2 {
+        width: 100%;
+        bottom: 18px;
+      }
+      #menu:checked ~ label .bar1 {
+        width: 100%;
+        transform: translate(0, -7.5px) rotate (45deg);
+      }
+      #menu:checked ~ label .bar2 {
+        transform: translate(0, -20px) rotate(-45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" name="mobile" id="menu" />
+    <button>
+      <label for="menu">
+        <span class="bar1"></span>
+        <span class="bar2"></span>
+      </label>
+    </button>
+  </body>
+</html>

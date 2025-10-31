@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caffebene Mockup</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      /* 상단 메뉴 */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid #ccc;
+        z-index: 100;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+      }
+      nav .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+      nav ul li {
+        margin-left: 30px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+      }
+
+      /* 메인 배너 + 배경 동영상 */
+      .main-banner {
+        position: relative;
+        height: 90vh;
+        overflow: hidden;
+      }
+      .main-banner video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+      .banner-content {
+        position: relative;
+        color: white;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.3);
+      }
+      .banner-content h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+      .banner-content p {
+        font-size: 24px;
+      }
+
+      /* 슬라이드 배너 */
+      .slides {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        margin-top: 50px;
+      }
+      .slide-track {
+        display: flex;
+        width: 300%;
+        animation: slide 12s infinite;
+      }
+      .slide {
+        width: 100%;
+        flex-shrink: 0;
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+      }
+      @keyframes slide {
+        0% {
+          transform: translateX(0%);
+        }
+        33% {
+          transform: translateX(-100%);
+        }
+        66% {
+          transform: translateX(-200%);
+        }
+        100% {
+          transform: translateX(0%);
+        }
+      }
+
+      /* 섹션 예시 */
+      section {
+        padding: 80px 50px;
+        text-align: center;
+      }
+      section h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+      }
+      .cards {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .card {
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .card .content {
+        padding: 20px;
+      }
+      .card .content h3 {
+        margin-bottom: 10px;
+      }
+
+      /* 푸터 */
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 40px 50px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Caffebene</div>
+        <ul>
+          <li><a href="#">메뉴</a></li>
+          <li><a href="#">매장찾기</a></li>
+          <li><a href="#">이벤트</a></li>
+          <li><a href="#">커뮤니티</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 배경 동영상 + 텍스트 -->
+    <div class="main-banner">
+      <video
+        src="https://www.w3schools.com/howto/rain.mp4"
+        autoplay
+        muted
+        loop
+      ></video>
+      <div class="banner-content">
+        <h1>Welcome to Caffebene</h1>
+        <p>당신의 하루를 달콤하게</p>
+      </div>
+    </div>
+
+    <!-- 슬라이드 배너 -->
+    <div class="slides">
+      <div class="slide-track">
+        <div
+          class="slide"
+          style="
+            background-image: url('https://via.placeholder.com/1200x400/ff7f7f/333');
+          "
+        ></div>
+        <div
+          class="slide"
+          style="
+            background-image: url('https://via.placeholder.com/1200x400/7f7fff/333');
+          "
+        ></div>
+        <div
+          class="slide"
+          style="
+            background-image: url('https://via.placeholder.com/1200x400/7fff7f/333');
+          "
+        ></div>
+      </div>
+    </div>
+
+    <!-- 섹션 예시 -->
+    <section>
+      <h2>신메뉴 소개</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200" alt="메뉴1" />
+          <div class="content">
+            <h3>카페라떼</h3>
+            <p>부드럽고 향긋한 카페라떼</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200" alt="메뉴2" />
+          <div class="content">
+            <h3>아메리카노</h3>
+            <p>깊고 진한 풍미의 아메리카노</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200" alt="메뉴3" />
+          <div class="content">
+            <h3>딸기 프라페</h3>
+            <p>상큼달콤한 딸기 프라페</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>&copy; 2025 Caffebene. All Rights Reserved.</footer>
+  </body>
+</html>

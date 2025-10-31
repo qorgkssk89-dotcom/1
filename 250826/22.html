@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+      div {
+        display: flex;
+        justify-content: space-between; /* 텍스트와 이미지를 양 옆으로 배치 */
+        align-items: center; /* 세로 중앙 정렬 */
+        border: 1px solid #000;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 1.2em;
+        margin-right: 20px; /* 이미지와의 간격을 둠 */
+        flex: 1; /* 텍스트가 남는 공간을 차지하게 함 */
+      }
+      img {
+        width: 200px;
+        height: auto;
+        border-radius: 8px;
+      }
+      /* 작은 화면에서 이미지가 위로 가도록 */
+      @media (max-width: 600px) {
+        div {
+          flex-direction: column; /* 세로로 배치 */
+          align-items: flex-start; /* 왼쪽 정렬 */
+        }
+        img {
+          width: 100%; /* 화면 크기에 맞게 이미지 크기 조정 */
+          margin-top: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        <h1>이미지+텍스트배너</h1>
+        <p>
+          간단한 이미지 2장과 텍스트 만으로 전체 사이즈 베리에이션이 가능합니다.
+          텍스트 위주 소구 캠페인에 적합한 배너 솔루션입니다.
+        </p>
+      </div>
+      <img
+        src="https://nhnace.com/static/media/format_1.ff2590122beb317bcc34.png"
+        alt="배너 이미지"
+      />
+    </div>
+  </body>
+</html>

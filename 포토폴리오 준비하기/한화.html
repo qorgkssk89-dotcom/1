@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>web.factory - About (연습용 첫페이지)</title>
+    <style>
+      :root {
+        --accent: #111827;
+        --muted: #6b7280;
+        --bg: #fafafa;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Noto Sans KR", system-ui, -apple-system, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial;
+        margin: 0;
+        color: var(--accent);
+        background: var(--bg);
+      }
+      header {
+        background: #fff;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 0;
+      }
+      .brand {
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      .menu {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .menu a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+      .cta {
+        padding: 8px 14px;
+        border-radius: 6px;
+        background: #111827;
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      /* mobile menu using CSS only */
+      #mobileToggle {
+        display: none;
+      }
+      .mobileMenu {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        border-top: 1px solid #eee;
+        padding: 12px 0;
+      }
+      #mobileToggle:checked + .mobileMenu {
+        display: flex;
+      }
+      .mobileMenu a {
+        display: block;
+        padding: 8px 0;
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .hamburgerLabel {
+        display: none;
+        cursor: pointer;
+        font-size: 18px;
+      }
+      @media (max-width: 800px) {
+        .menu {
+          display: none;
+        }
+        .hamburgerLabel {
+          display: inline-block;
+        }
+      }
+
+      /* hero */
+      .hero {
+        padding: 80px 0 40px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 40px;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: 44px;
+        margin: 0 0 10px;
+      }
+      .hero p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .hero .btns {
+        margin-top: 18px;
+        display: flex;
+        gap: 12px;
+      }
+
+      /* features */
+      .features {
+        padding: 40px 0;
+      }
+      .feature-list {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+      .feature {
+        background: #fff;
+        border-radius: 12px;
+        padding: 22px;
+        flex: 1;
+        min-width: 220px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+      }
+      .feature img {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+      }
+      .feature h3 {
+        margin: 0 0 6px;
+        font-size: 18px;
+      }
+      .feature p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* footer */
+      footer {
+        padding: 30px 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      footer .cols {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      /* small screens */
+      @media (max-width: 980px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero h1 {
+          font-size: 36px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="brand">web.factory</div>
+          <input type="checkbox" id="mobileToggle" />
+          <label for="mobileToggle" class="hamburgerLabel">☰</label>
+          <div class="menu">
+            <a href="#about">회사소개</a>
+            <a href="#projects">프로젝트</a>
+            <a href="#contact">문의하기</a>
+            <a class="cta" href="#projects">프로젝트 바로보기</a>
+          </div>
+          <div class="mobileMenu">
+            <a href="#about">회사소개</a>
+            <a href="#projects">프로젝트</a>
+            <a href="#contact">문의하기</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-grid">
+            <div>
+              <h1>안녕하세요<br />웹.제작소입니다</h1>
+              <p>
+                관계를 담는 디자인 — 고객과 사용자의 관계, 서비스와 사람의
+                관계를 긍정적으로 만들어주는 홈페이지를 제안하고 제작합니다.
+              </p>
+              <div class="btns">
+                <a class="cta" href="#projects">start</a>
+                <a
+                  href="#about"
+                  style="
+                    padding: 8px 12px;
+                    border-radius: 6px;
+                    background: transparent;
+                    border: 1px solid #e5e7eb;
+                    text-decoration: none;
+                    color: var(--accent);
+                  "
+                  >more</a
+                >
+              </div>
+            </div>
+            <div>
+              <img
+                src="/assets/illustration-1.svg"
+                alt="일러스트"
+                style="
+                  width: 100%;
+                  max-width: 420px;
+                  display: block;
+                  margin-left: auto;
+                  border-radius: 8px;
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features container">
+        <div class="feature-list">
+          <article class="feature">
+            <img src="/assets/icon-relations.svg" alt="relationships 아이콘" />
+            <div>
+              <h3>
+                relationships<br /><small
+                  style="color: var(--muted); font-weight: 600"
+                  >관계를 담다</small
+                >
+              </h3>
+              <p>
+                디자인은 다양한 관계를 만들어냅니다. 사용자의 경험과
+                클라이언트의 목적을 함께 고려합니다.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature">
+            <img src="/assets/icon-customer.svg" alt="customer 아이콘" />
+            <div>
+              <h3>
+                customer<br /><small
+                  style="color: var(--muted); font-weight: 600"
+                  >고객을 말하다</small
+                >
+              </h3>
+              <p>
+                고객 만족을 최우선으로, 실용적이고 효과적인 홈페이지 제작을
+                진행합니다.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature">
+            <img src="/assets/icon-more.svg" alt="more 아이콘" />
+            <div>
+              <h3>
+                more & more<br /><small
+                  style="color: var(--muted); font-weight: 600"
+                  >누구보다 더</small
+                >
+              </h3>
+              <p>
+                열정과 즐거움으로 프로젝트에 임합니다. 함께 성장하는 협업을
+                약속합니다.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer id="contact">
+        <div class="container">
+          <div class="cols">
+            <div>
+              <strong>© 웹제작소</strong>
+              <p>
+                대표 / 김창규<br />전화 / 051.714.5730<br />이메일 /
+                partner@web-factory.co.kr
+              </p>
+            </div>
+            <div>
+              <p>
+                주소 / 부산광역시 부산진구 부전로 96번길 7<br />사업자등록번호 /
+                698-17-01143
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+<!DOCTYPE html>
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>☕ 클론 vs 리뉴얼 비교 보기</h1>
+  <div class="buttons">
+    <button id="cloneBtn" class="active">클론 버전</button>
+    <button id="renewalBtn">리뉴얼 버전</button>
+  </div>
+
+  <div class="frame">
+    <iframe id="preview" srcdoc="
+      <style>
+        body {font-family: sans-serif; margin: 0;}
+        header {background:#222; color:#fff; display:flex; justify-content:space-between; padding:20px;}
+        nav a {color:#fff; margin:0 10px; text-decoration:none;}
+        main img {width:100%;}
+        section ul {display:flex; justify-content:center; gap:20px; padding:20px; list-style:none;}
+        footer {background:#222; color:#fff; text-align:center; padding:10px;}
+      </style>
+      <header><h1>COFFEE HOUSE</h1><nav><a href='#'>메뉴</a><a href='#'>스토어</a><a href='#'>이벤트</a></nav></header>
+      <main><img src='https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=60'><section><h2 style='text-align:center'>BEST MENU</h2><ul><li>아메리카노</li><li>카페라떼</li><li>바닐라라떼</li></ul></section></main>
+      <footer>© 2025 Coffee House</footer>
+    "></iframe>
+  </div>
+
+  <script>
+    const preview = document.getElementById('preview');
+    const cloneBtn = document.getElementById('cloneBtn');
+    const renewalBtn = document.getElementById('renewalBtn');
+
+    const cloneHTML = `
+      <style>
+        body {font-family: sans-serif; margin: 0;}
+        header {background:#222; color:#fff; display:flex; justify-content:space-between; padding:20px;}
+        nav a {color:#fff; margin:0 10px; text-decoration:none;}
+        main img {width:100%;}
+        section ul {display:flex; justify-content:center; gap:20px; padding:20px; list-style:none;}
+        footer {background:#222; color:#fff; text-align:center; padding:10px;}
+      </style>
+      <header><h1>COFFEE HOUSE</h1><nav><a href='#'>메뉴</a><a href='#'>스토어</a><a href='#'>이벤트</a></nav></header>
+      <main><img src='https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=60'><section><h2 style='text-align:center'>BEST MENU</h2><ul><li>아메리카노</li><li>카페라떼</li><li>바닐라라떼</li></ul></section></main>
+      <footer>© 2025 Coffee House</footer>
+    `;
+
+    const renewalHTML = `
+      <style>
+        body {font-family: 'Pretendard', sans-serif; margin:0; background:#fff6f0; color:#333;}
+        header {background:linear-gradient(90deg,#734b34,#d7bfae); color:#fff; display:flex; justify-content:space-between; align-items:center; padding:20px;}
+        .logo {font-size:1.5rem; margin-right:8px;}
+        .hero {background:url('https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=60') center/cover no-repeat; color:#fff; text-align:center; padding:100px 20px;}
+        .hero button {background:#fff; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:bold;}
+        .cards {display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; padding:40px;}
+        .card {background:#fff; border-radius:10px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center;}
+        footer {background:#734b34; color:#fff; text-align:center; padding:15px;}
+      </style>
+      <header><h1><span class='logo'>☕</span>Coffee House</h1><button>Menu</button></header>
+      <main>
+        <section class='hero'><h2>당신의 하루를 깨우는 향기</h2><button>지금 주문하기</button></section>
+        <section class='cards'>
+          <div class='card'><h3>아메리카노</h3><p>진한 에스프레소의 깔끔한 맛</p></div>
+          <div class='card'><h3>바닐라라떼</h3><p>부드럽고 달콤한 향</p></div>
+          <div class='card'><h3>카푸치노</h3><p>크리미한 거품의 조화</p></div>
+        </section>
+      </main>
+      <footer>© 2025 Coffee House | Designed by Hanna</footer>
+    `;
+
+    cloneBtn.onclick = () => {
+      preview.srcdoc = cloneHTML;
+      cloneBtn.classList.add('active');
+      renewalBtn.classList.remove('active');
+    };
+
+    renewalBtn.onclick = () => {
+      preview.srcdoc = renewalHTML;
+      renewalBtn.classList.add('active');
+      cloneBtn.classList.remove('active');
+    };
+  </script>
+</body>
+</html>
+
+웹사이트의컨셉 

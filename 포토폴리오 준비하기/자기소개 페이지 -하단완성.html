@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>web.factory - 한나제작소</title>
+    <style>
+      :root {
+        --accent: #111827;
+        --muted: #6b7280;
+        --bg: #fafafa;
+        --brand: #111827;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Noto Sans KR", system-ui, -apple-system, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial;
+        margin: 0;
+        color: var(--accent);
+        background: var(--bg);
+      }
+
+      /* Header */
+      header {
+        background: #fff;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 0;
+        position: relative;
+      }
+      .brand {
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      .menu {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .menu a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+      .cta {
+        padding: 8px 14px;
+        border-radius: 6px;
+        background: var(--brand);
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .hamburgerLabel {
+        display: none;
+        cursor: pointer;
+        font-size: 22px;
+      }
+      #mobileToggle {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .menu {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          width: 180px;
+          background: #fff;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        #mobileToggle:checked + .hamburgerLabel + .menu {
+          display: flex;
+        }
+        .hamburgerLabel {
+          display: block;
+        }
+      }
+
+      /* Hero */
+      .hero {
+        padding: 80px 0 40px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 40px;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: 44px;
+        margin: 0 0 10px;
+      }
+      .hero p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .btns {
+        margin-top: 18px;
+        display: flex;
+        gap: 12px;
+      }
+
+      /* Features */
+      .features {
+        padding: 40px 0;
+      }
+      .feature-list {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+      .feature {
+        background: #fff;
+        border-radius: 12px;
+        padding: 22px;
+        flex: 1;
+        min-width: 220px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+        transition: 0.3s;
+      }
+      .feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+      .feature img {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+        border-radius: 8px;
+      }
+      .feature h3 {
+        margin: 0 0 6px;
+        font-size: 18px;
+      }
+      .feature p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* Footer */
+      footer {
+        background: #111827;
+        color: #fff;
+        padding: 40px 0;
+      }
+      footer .cols {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      footer p {
+        margin: 6px 0;
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero h1 {
+          font-size: 36px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav>
+          <div class="brand">한나제작소</div>
+          <input type="checkbox" id="mobileToggle" />
+          <label for="mobileToggle" class="hamburgerLabel">☰</label>
+          <div class="menu">
+            <a href="#about">자기소개</a>
+            <a href="#projects">포트폴리오</a>
+            <a class="cta" href="#contact">연락하기</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-grid">
+            <div>
+              <h1>안녕하세요<br />백한나 입니다</h1>
+              <p>
+                고객과 사용자의 관계,<br />
+                서비스와 사람의 관계를 <br />긍정적으로 만들어주는
+                <br />홈페이지를 제작하고싶습니다
+              </p>
+              <div class="btns">
+                <a href="#projects" class="cta">포트폴리오 보기</a>
+                <a href="#contact" class="cta" style="background: #6b7280"
+                  >연락하기</a
+                >
+              </div>
+            </div>
+            <div>
+              <img
+                src="profile.jpg"
+                alt="백한나 프로필 사진"
+                style="
+                  width: 100%;
+                  max-width: 380px;
+                  border-radius: 12px;
+                  display: block;
+                  margin-left: auto;
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio -->
+      <section id="projects" class="features container">
+        <h2>Portfolio</h2>
+        <div class="feature-list">
+          <article class="feature">
+            <img src="project1.jpg" alt="프로젝트 이미지 1" />
+            <div>
+              <h3><a href="#">Portfolio 1</a></h3>
+              <p>리디자인 프로젝트</p>
+            </div>
+          </article>
+
+          <article class="feature">
+            <img src="project2.jpg" alt="프로젝트 이미지 2" />
+            <div>
+              <h3><a href="#">Portfolio 2</a></h3>
+              <p>개인 웹사이트 제작</p>
+            </div>
+          </article>
+
+          <article class="feature">
+            <img src="project3.jpg" alt="프로젝트 이미지 3" />
+            <div>
+              <h3><a href="#">Portfolio 3</a></h3>
+              <p>UI/UX 연습 예제</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer id="contact">
+        <div class="container">
+          <div class="cols">
+            <div>
+              <strong>한나제작소</strong>
+              <p>백한나</p>
+              <p>전화: 010-9980-8393</p>
+              <p>이메일: qorkgssk1228@naver.com</p>
+            </div>
+            <div>
+              <p>주소: 대전광역시 서구 가수원로</p>
+              <p>© 2025 web.factory</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

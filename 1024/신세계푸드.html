@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 720px;
+        background-size: cover;
+        background-position: center;
+      }
+      div ul.list {
+        width: 1905px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 64px;
+        justify-content: center;
+      }
+
+      div ul.list li {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        transition: 0.3s;
+        border: 4px solid transparent;
+        cursor: pointer;
+      }
+      .list li:hover {
+        border: 12px solid #d80000;
+      }
+      .list li.active {
+        border: 12px solid #d80000;
+      }
+      .list li p img {
+        transition: 0.3s;
+      }
+      .list:hover li p img {
+        filter: grayscale(100%);
+        opacity: 1;
+      }
+      .list li:hover p img,
+      .list li.active p img {
+        filter: none;
+        opacity: 1;
+      }
+      .bg {
+        background-color: #fff;
+      }
+      .bg1 {
+        background-image: url(https://www.shinsegaefood.com/images/business/business_bg_food.jpg);
+      }
+      .bg2 {
+        background-image: url(https://www.shinsegaefood.com/images/business/business_bg_bakery.jpg);
+      }
+      .bg3 {
+        background-image: url(https://www.shinsegaefood.com/images/business/business_bg_franchise.jpg);
+      }
+      .bg4 {
+        background-image: url(https://www.shinsegaefood.com/images/business/business_bg_premiumService.jpg);
+      }
+      .bg5 {
+        background-image: url(https://www.shinsegaefood.com/images/business/business_bg_foodService.jpg);
+      }
+      .bg6 {
+        background-image: url(https://www.shinsegaefood.com/images/business/business_bg_subsidiary.jpg);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul class="list">
+        <li>
+          <p>
+            <img
+              src="https://www.shinsegaefood.com/images/business/bg_business_tab01_on.png"
+              alt=""
+            />
+          </p>
+        </li>
+        <li>
+          <p>
+            <img
+              src="https://www.shinsegaefood.com/images/business/bg_business_tab04_on.png"
+              alt=""
+            />
+          </p>
+        </li>
+        <li>
+          <p>
+            <img
+              src="https://www.shinsegaefood.com/images/business/bg_business_tab05_on.png"
+              alt=""
+            />
+          </p>
+        </li>
+        <li>
+          <p>
+            <img
+              src="https://www.shinsegaefood.com/images/business/bg_business_tab03_on.png"
+              alt=""
+            />
+          </p>
+        </li>
+        <li>
+          <p>
+            <img
+              src="https://www.shinsegaefood.com/images/business/bg_business_tab02_on.png"
+              alt=""
+            />
+          </p>
+        </li>
+        <li>
+          <p>
+            <img
+              src="https://www.shinsegaefood.com/images/business/bg_business_tab06_on.png"
+              alt=""
+            />
+          </p>
+        </li>
+      </ul>
+    </div>
+    <script>
+      document.querySelectorAll(".list li").forEach(function (v, k, ar) {
+        v.classList.add("bg");
+        v.onclick = function () {
+          ar.forEach(function (v) {
+            v.classList.remove("bg");
+          });
+          v.classList.add("bg");
+          document
+            .querySelector("div")
+            .classList.remove("bg1", "bg2", "bg3", "bg4", "bg5", "bg6");
+          document.querySelector("div").classList.add("bg" + (k + 1));
+        };
+      });
+    </script>
+  </body>
+</html>

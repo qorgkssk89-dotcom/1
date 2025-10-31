@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #f9f9f9;
+      }
+      .brand-container {
+        width: 100%;
+        max-width: 940px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 20px;
+        padding: 40px;
+      }
+      .brand-card {
+        background: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .brand-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="brand-container">
+      <div class="brand-card">
+        <img
+          src="https://www.shinsegaefood.com/images/business/business_item_hotelCollection.jpg"
+          alt="호텔컬렉션"
+        />
+      </div>
+      <div class="brand-card">
+        <img
+          src="https://www.shinsegaefood.com/images/business/business_item_vecchiaEnuovo.jpg"
+          alt="디저트"
+        />
+      </div>
+      <div class="brand-card">
+        <img
+          src="	https://www.shinsegaefood.com/images/business/business_item_olbaan.jpg"
+          alt="올바르고반듯한"
+        />
+      </div>
+      <div class="brand-card">
+        <img
+          src="https://www.shinsegaefood.com/images/business/business_item_brand.jpg"
+          alt="음료"
+        />
+      </div>
+      <div class="brand-card">
+        <img
+          src="https://www.shinsegaefood.com/images/business/business_item_recette.jpg"
+          alt="레세트"
+        />
+      </div>
+    </div>
+  </body>
+</html>

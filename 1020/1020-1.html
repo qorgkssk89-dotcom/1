@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #wrap {
+        display: flex;
+        flex-flow: row wrap;
+        width: 90%;
+        margin: 0 auto;
+      }
+      .header {
+        display: flex;
+        order: 1;
+        justify-content: flex-end;
+        position: relative;
+        width: 100%;
+        background: #ff6b57;
+      }
+
+      .header h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 12.5%;
+        height: 142px;
+        background: #ff6b57;
+      }
+      .header nav {
+        width: 87.5%;
+        min-height: 80px;
+        background: #ff6b57;
+      }
+      .slider_section {
+        width: 50%;
+        height: 440px;
+        background: #3c90be;
+        order: 2;
+      }
+      .gallery_section {
+        order: 3;
+        width: 27.083333333333333333333333333333%;
+        height: 440px;
+        background: #f8de73;
+      }
+      .rankup_section {
+        order: 4;
+        height: 440px;
+        width: 22.916666666666666666666666666667%;
+        background: #00d2a5;
+      }
+      .latest_post_section {
+        order: 5;
+        width: 30%;
+        height: 300px;
+        background: #9cabe4;
+      }
+
+      .popular_post_section {
+        height: 300px;
+        order: 6;
+        width: 30%;
+        background: #d76817;
+      }
+      .banner_section {
+        order: 7;
+        width: 22.916666666666666666666666666667%;
+        display: flex;
+        flex-flow: column nowrap;
+        background: #ffb400;
+        height: 300px;
+      }
+      .banner_section div {
+        flex: 1 1 0;
+      }
+      .banner_box-01 {
+        background: #0175bb;
+      }
+
+      .banner_box-02 {
+        background: #1261c9;
+      }
+
+      .social_section {
+        order: 8;
+        height: 300px;
+        width: 17.083333333333333333333333333333%;
+        background: #fe6eda;
+      }
+
+      .footer {
+        order: 9;
+        width: 100%;
+        height: 94px;
+        background: #474747;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <header class="header">
+        <h1>헤더영역</h1>
+        <nav></nav>
+      </header>
+      <section class="slider_section">슬라이더영역</section>
+      <section class="gallery_section">갤러리영역</section>
+      <section class="rankup_section">인기검색어영역</section>
+      <section class="latest_post_section">최근글역역</section>
+      <section class="popular_post_section">인기글 영역</section>
+      <section class="banner_section">
+        <div class="banner_box-01">배너영역</div>
+        <div class="banner_box-02"></div>
+      </section>
+      <section class="social_section">스셜네트워크영역</section>
+      <footer class="footer">푸터영역</footer>
+    </div>
+  </body>
+</html>

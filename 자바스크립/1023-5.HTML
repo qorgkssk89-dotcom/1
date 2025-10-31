@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="KO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .on {
+        color: red;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="a1 b1 c1" id="demo">classlist속성</p>
+    <h1>ddd</h1>
+    <button>toggle</button>
+    <button>classlist</button>
+    <script>
+      //document.querySelector("p").classList.add("on");
+      //document.querySelector("p").classList.remove("on");
+      document.querySelector("button").onclick = function () {
+        document.querySelector("p").classList.toggle("on");
+      };
+      //document.querySelector("p").classList.toggle("on", "active");
+      console.log(document.querySelector("p").classList);
+      console.log(document.querySelector("p").classList.contains("a2"));
+      //document.getElementsByTagName("button")[1]
+      let list = document.getElementById("demo").classList;
+      let text = "";
+      for (let x of list.entries()) {
+        text += x + "br";
+      }
+      document.getElementById("h1").innerHTML = text;
+      console.log(list.value);
+      console.log(list.item(0));
+    </script>
+  </body>
+</html>

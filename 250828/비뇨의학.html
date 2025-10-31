@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hanwha Eagles Style Guide</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 40px;
+        background: #fafafa;
+        color: #333;
+      }
+      h2 {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 20px 0 10px;
+      }
+      .section {
+        margin-bottom: 40px;
+      }
+      .row {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+      .color-item,
+      .button-item,
+      .icon-item,
+      .font-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        margin: 10px;
+      }
+      .circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid #ddd;
+      }
+      .hex {
+        font-size: 13px;
+      }
+      .button-sample {
+        padding: 10px 30px;
+        border-radius: 25px;
+        border: 2px solid transparent;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .normal {
+        background: #ffffff;
+        border-color: #2b2b2b;
+        color: #2b2b2b;
+      }
+      .hover {
+        background: #f36f21;
+        color: #fff;
+      }
+      .press {
+        background: #8b5e3c;
+        color: #fff;
+      }
+      .disabled {
+        background: #e0e0e0;
+        color: #999;
+      }
+      .icon-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 60px);
+        gap: 20px;
+        justify-content: start;
+      }
+      .icon-box {
+        width: 60px;
+        height: 60px;
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        background: #fff;
+      }
+      .font-sample {
+        font-size: 16px;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      .extrabold {
+        font-weight: 800;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TYPOGRAPHY -->
+    <div class="section">
+      <h2>TYPOGRAPHY</h2>
+      <div class="row">
+        <div class="font-item">
+          <div class="font-sample">나눔스퀘어 라운드 Light</div>
+          <div class="font-sample">나눔스퀘어 라운드 Regular</div>
+        </div>
+        <div class="font-item">
+          <div class="font-sample bold">나눔스퀘어 라운드 Bold</div>
+          <div class="font-sample extrabold">나눔스퀘어 라운드 Extra Bold</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLOR PALETTE -->
+    <div class="section">
+      <h2>COLOR PALETTE</h2>
+      <div class="row">
+        <div>
+          <strong>PRIMARY color</strong>
+          <div class="color-item">
+            <div class="circle" style="background: #f36f21"></div>
+            <div class="hex">#F36F21</div>
+          </div>
+          <div class="color-item">
+            <div class="circle" style="background: #2b2b2b"></div>
+            <div class="hex">#2B2B2B</div>
+          </div>
+          <div class="color-item">
+            <div class="circle" style="background: #ffffff"></div>
+            <div class="hex">#FFFFFF</div>
+          </div>
+        </div>
+        <div>
+          <strong>SECONDARY color</strong>
+          <div class="color-item">
+            <div class="circle" style="background: #8b5e3c"></div>
+            <div class="hex">#8B5E3C</div>
+          </div>
+          <div class="color-item">
+            <div class="circle" style="background: #f2b544"></div>
+            <div class="hex">#F2B544</div>
+          </div>
+          <div class="color-item">
+            <div class="circle" style="background: #6db193"></div>
+            <div class="hex">#6DB193</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="section">
+      <h2>BUTTONS</h2>
+      <div class="row">
+        <button class="button-sample normal">NORMAL</button>
+        <button class="button-sample hover">HOVER</button>
+        <button class="button-sample press">PRESS</button>
+        <button class="button-sample disabled">DISABLED</button>
+      </div>
+    </div>
+
+    <!-- ICONS -->
+    <div class="section">
+      <h2>ICONS (Hanwha Eagles Mood)</h2>
+      <div class="icon-grid">
+        <div class="icon-box">⚾</div>
+        <div class="icon-box">🧢</div>
+        <div class="icon-box">🥎</div>
+        <div class="icon-box">🦅</div>
+        <div class="icon-box">🎟</div>
+        <div class="icon-box">📣</div>
+      </div>
+    </div>
+  </body>
+</html>
