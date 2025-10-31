@@ -19,7 +19,10 @@
       };
       function myFunction(a, b) {
         // return a * b;
-        return arguments.length; //arguments함수에 전달된 실제인수목록
+        return arguments.length;
+        //arguments함수에 전달된 실제인수목록
+        //arguments.length → 몇 개 값이 들어왔는지 알려줌
+        //myFunction(10, 20) → 2개 값 들어감 → 화면에 2 출력
       }
 
       document.write(myFunction(10, 20));
@@ -27,9 +30,9 @@
         return (20 / 10) * (10 + 30);
       }
       document.write(my);
-      let num1 = 10; //전역변수
+      let num1 = 10; //전역변수->어디서든 접근 가능
       function num() {
-        let num1 = 30; //지역변수
+        let num1 = 30; //지역변수→ 함수 안에서만 존재
       }
       document.write("<br>" + num1 + "<br>");
       //전역(Global) → 네 웹사이트 전체 구조 안에서 어디서든 접근 가능
