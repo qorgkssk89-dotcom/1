@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between; /* 좌우로 배치 */
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .text {
+        max-width: 60%; /*글영역 넓이제한*/
+      }
+      .text h1 {
+        padding: 30px;
+        font-size: 64px;
+      }
+      .text p {
+        padding-left: 30px;
+        padding-bottom: 30px;
+        font-size: 22px;
+      }
+      .menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-right: 30px;
+      }
+      .menu button {
+        margin: 10px;
+        padding: 10px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        text-align: center;
+        font-size: 18px;
+      }
+      .menu button:hover {
+        border: 1px solid #000;
+        border-radius: 5px;
+        font-size: 20px;
+      }
+      .img-wrap {
+        position: relative;
+        display: inline-block;
+        width: 95%;
+        height: 80%;
+      }
+
+      .img-wrap img {
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        border-radius: 10px;
+        display: block;
+        align-items: center;
+      }
+      .explain {
+        position: absolute;
+        bottom: 0%; /* 이미지 아래쪽에서 40px */
+        left: 15%; /* 왼쪽에서 40px */
+        color: white;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+      }
+
+      .explain h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+        padding-left: 30px;
+      }
+
+      .explain p {
+        font-size: 24px;
+        line-height: 1.5;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="warap">
+      <div class="top">
+        <div class="text">
+          <h1>공간안내</h1>
+          <p>
+            고즈넉한 자연 속 사계절의 아름다운 정취가 있는 청리움의 공간을
+            안내합니다
+          </p>
+        </div>
+        <div class="menu">
+          <button>강당동</button>
+          <button>연수동</button>
+          <button>카페테리아</button>
+          <button>잔디마당</button>
+          <button>오하산방</button>
+          <button>약초원</button>
+          <button>명당기도터</button>
+        </div>
+      </div>
+      <div class="content">
+        <div class="img-wrap">
+          <img
+            id="mainImage"
+            src="https://www.cheongrium.com/static/images/spaceinfo/main_space_2.jpg"
+            alt="공간 이미지"
+          />
+        </div>
+        <div class="explain">
+          <h1 class="head" id="hede">
+            강당동: 모임과 행사가 열리는 넓은 공간입니다
+          </h1>
+          <p class="desc" id="desc">
+            천혜의 자연 속 프라이빗한 단독 공간으로<br />교육, 세미나, 연수,
+            행사 등 <br />다채로운 이벤트를 지원합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let place = [
+        "https://www.cheongrium.com/static/images/spaceinfo/main_space_2.jpg",
+        "https://www.cheongrium.com/static/images/spaceinfo/main_space_3.jpg",
+        "https://www.cheongrium.com/static/images/spaceinfo/main_space_4.jpg",
+        "https://www.cheongrium.com/static/images/spaceinfo/main_space_5.jpg",
+        "https://www.cheongrium.com/static/images/spaceinfo/main_space_6.jpg",
+        "https://www.cheongrium.com/static/images/spaceinfo/main_space_7.jpg",
+        "https://www.cheongrium.com/static/images/spaceinfo/main_space_8.jpg",
+      ];
+      let head = [
+        "강당동 (컨퍼런스홀 | 세미나 A·B)",
+        "연수동",
+        "카페테리아",
+        "잔디마당",
+        "오하산방",
+        "약초원",
+        "명당기도터",
+      ];
+      let desc = [
+        "천혜의 자연 속 프라이빗한 단독 공간으로<br />교육, 세미나, 연수, 행사등 <br />다채로운 이벤트를 지원합니다.",
+        "자연과 조화를 이루는 아늑한 보금자리로 쾌적한 환경의 휴식공간을 제공합니다.",
+        "강당동 1층에 위치한 카페테리아는 다양한 케이터링 식사메뉴와 함께 아름다운 풍경을 즐길수 있습니다",
+        "호수의 낭만과 푸른잔디가 펼쳐진 청리움이 자랑하는 대표 야외공간입니다",
+        "그림같은 산세와 연못이 있는 너와집 다도 및 촬영장소로 이용되는 전통공간입니다.",
+        "국내자생 산약초150여종을 한자리에서 볼수잇는 한약 자원의 보고입니다.",
+        "대길이 모이는 청리움 보리상의명당으로 큰뜻을 이루길 기원하는 소원터입니다.",
+        "추운 겨울 영하의 온도를 이기고 눈 속에서 피어난 가평 설ㄹ악의 최초 설록차 재배지입니다.",
+      ];
+
+      let btn = document.querySelectorAll("button");
+      btn.forEach(function (v, k) {
+        v.onclick = function () {
+          document.getElementById("mainImage").src = place[k];
+          document.getElementById("desc").innerHTML = desc[k];
+          document.getElementById("hede").textContent = head[k];
+        };
+      });
+    </script>
+  </body>
+</html>

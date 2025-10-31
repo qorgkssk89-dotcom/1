@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      for (let i = 1; i <= 100; i++) {
+        //let i = 1 → 시작값,i <= 100 → 조건(100이 될 때까지),i++ → 한 번 돌 때마다 1씩 증가->결과 1, 2, 3, …, 100
+        //for(변수선언과 초기값할당;조건;증감) i++, i = i+1, i+=1
+        document.write(`${i},`);
+      }
+      document.write(`<br>`);
+      for (let i = 1; i <= 100; i += 2) {
+        //i = i+2,i += 2 → 한 번에 2씩 커짐->결과 1, 3, 5, 7, …, 99(홀수)
+        document.write(`${i},`);
+      }
+      document.write(`<br>`);
+      for (let i = 0; i <= 100; i += 2) {
+        //i = i+2,시작값이 0,결과-> 0, 2, 4, 6, …, 100(짝수),
+        //i % 2 == 0이면 짝수, i % 2 == 1이면 홀수.
+        document.write(`${i},`);
+      }
+      document.write(`<br>`);
+      for (let i = 1; i <= 100; i++) {
+        //%는 “나머지 연산자.”
+        // i % 2 == 0이면 짝수, i % 2 == 1이면 홀수.조건문을써서걸러냄
+        if (i % 2 == 0) {
+          document.write(`${i},`);
+        }
+      }
+      document.write(`<br>`);
+      let sum = 0;
+      for (let i = 1; i <= 100; i++) {
+        //sum = sum +i;,반복하면서 sum에 계속 더함.->결과마지막엔 1+2+3+…+100 = 5050
+        sum += i;
+      }
+      document.write(`1부터 100까지의 합계 : ${sum}<br>`);
+      let even = 0;
+      for (let i = 1; i <= 100; i++) {
+        //짝수만 골라서 더함 →결과 2550
+        if (i % 2 == 0) {
+          even += i;
+        }
+      }
+      document.write(`1부터 100까지의 짝수의 합계 : ${even}<br>`);
+      let odd = 0;
+      for (let i = 1; i <= 100; i++) {
+        //홀수만 더하면 → 결과 2500
+        if (i % 2 == 1) {
+          odd += i;
+        }
+      }
+      document.write(`1부터 100까지의 홀수의 합계 : ${odd}<br>`);
+      for (let i = 100; i >= 1; i--) {
+        //시작값이 100, 조건은 1 이상일 때까지,i--로 1씩 감소.->결과 100, 99, 98, …, 1
+        document.write(`${i},`);
+      }
+      document.write(`<br>`);
+      let str = "<ul>";
+      for (let i = 1; i <= 100; i++) {
+        str += `<li><a href="#">링크${i}</a></li>`;
+      } //문자열에 <ul> 태그를 시작,반복문으로 <li> 항목 100개를 자동 ,마지막에 </ul>로 닫기생성,->결과 <ul> 목록이 화면에뜸
+      str += "</ul>";
+      document.write(str);
+      //% 연산자->a % n 은 a를 n으로 나눈 나머지를 반환
+      // ex)17 % 5 = 2 ( 17 = 3×5 + 2)->a = q * n + r
+      //n % 2 === 0 → 짝수,=== 1 → 홀수.
+      //index = (index + 1) % length, 배열을 원형으로순환시사용
+      //(angle + 360) % 360, 시간/각도 계산
+      //i % k,그룹분배시사용
+      //음수값,소수값 주의, 음수를그대로 반영함
+    </script>
+  </body>
+</html>

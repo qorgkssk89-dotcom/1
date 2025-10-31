@@ -85,27 +85,30 @@
     <script>
       let btn = document.querySelectorAll(".list li");
       let plus = document.querySelectorAll("p span");
-      let detail = document.querySelectorAll("ul.list li p:nth-child");
+      let detail = document.querySelectorAll("ul.list li p:nth-child(2)");
       btn.forEach(function (v, k, ar) {
         v.onclick = function () {
-          /* ar.forEach(function (v) {
+          /*ar.forEach(function (v) {
             v.querySelector("span").classList.remove("on");
             v.getElementsByTagName("p")[1].classList.remove("on");
           });
           v.querySelector("span").classList.add("on");
-          v.getElementsByTagName("p")[1].classList.add("on");*/
+          v.getElementsByTagName("p")[1].classList.add("on");
+          */
           let showCon = this.querySelector("span").classList.contains("on");
           console.log(showCon);
           if (showCon) {
             this.querySelector("span").classList.remove("on");
-            this.getAttributeNames("P")[1].classList.remove("on");
-          } else
+            this.getElementsByTagName("p")[1].classList.remove("on");
+          } else {
             plus.forEach(function (v) {
               v.classList.remove("on");
             });
-          {
-            this.querySelector("span").classList.add(on);
-            this.getAttributeNames("P")[1].classList.add("on");
+            detail.forEach(function (v) {
+              v.classList.remove("on");
+            });
+            this.querySelector("span").classList.add("on");
+            this.getElementsByTagName("p")[1].classList.add("on");
           }
         };
       });

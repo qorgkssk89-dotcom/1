@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>함수호출</p>
+    <script>
+      (function myfnc() {
+        //즉시 실행 함수 → 정의하자마자 바로 실행,자바스크립트바로출력
+        document.write("자바스크립트");
+      })();
+      //myfnc();
+      document.querySelector("p").onclick = function () {
+        //querySelector(검색하다 선택자를)-첫 번째로 일치하는 요소 하나만 반환,
+        myfnc();
+      };
+      function myFunction(a, b) {
+        // return a * b;
+        return arguments.length; //arguments함수에 전달된 실제인수목록
+      }
+
+      document.write(myFunction(10, 20));
+      function my() {
+        return (20 / 10) * (10 + 30);
+      }
+      document.write(my);
+      let num1 = 10; //전역변수
+      function num() {
+        let num1 = 30; //지역변수
+      }
+      document.write("<br>" + num1 + "<br>");
+      //전역(Global) → 네 웹사이트 전체 구조 안에서 어디서든 접근 가능
+      //               예: 전역 변수, 전역 함수
+      //               페이지 어디서든 console.log(x)처럼 바로 쓸 수 있음
+
+      //지역 스코프(Local Scope)→ 내가 만든 특정 구역, 예를 들어 함수 안에서만 접근 가능
+      //                         함수 안에서 선언한 변수, 함수 이름 등
+      //                         함수 밖에서는 접근하려고 하면 ReferenceError 발생
+      //IIFE 이름 → 그 즉시 실행 함수 안에서만 존재하는 별명
+      //            밖에서 부르면 접근 불가 → 에러 발생
+      //            내부에서 자기 자신을 참조하거나 디버깅 용도로만 사용
+    </script>
+  </body>
+</html>
