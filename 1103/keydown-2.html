@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      //버튼 클릭, 글자 바꾸기 등 HTML 조작 → DOMContentLoaded
+      //슬라이드 이미지, 큰 배경, 동영상 준비 후 실행 → load
+      //window.onload = ... → 한 번만 가능
+      //addEventListener("load", ...) → 여러 개 동시에 가능
+
+      //웹사이트 로딩시점 관련된이벤트
+      //load,onload 문서를 모드 로드한후 실행(이미지,css,iframe,js)전부로드한후 실행
+      //onload 한번짜리 로드처리
+      window.onload = function () {
+        console.log("onload"); //페이지 안 모든 것(HTML, CSS, 이미지, 영상, iframe 등)이 다 로딩되고 나서 실행-한번만 실행 가능(덮어쓰기 됨)
+      };
+      window.addEventListener("load", function () {
+        console.log("load"); //window.onload와 비슷하게 페이지 전체 로딩 후 실행,여러 개를 동시에 등록 가능 → 덮어쓰지 않음(여러기능을 동시에 실행시 사용)
+      });
+      window.addEventListener("DOMContenLoaded", function () {
+        console.log("DOMContenLoaded"); //HTML 문서의 DOM 구조가 완전히 만들어지면 바로 실행,CSS, 이미지, 영상이 모두 로딩되지 않아도 실행 가능
+      });
+      //DOMContenLoaded html문서의 DOM구조만 실행(이미지,css,iframe,js로드전에 실행)
+    </script>
+  </body>
+</html>

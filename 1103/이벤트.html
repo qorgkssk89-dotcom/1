@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="demo">클릭이벤트</p>
+    <p id="con"></p>
+    <input type="text" id="name" value="123456" />
+    <script>
+      //*이벤트의종류
+      //1.click-클릭하면 글자 바뀜
+      //2.change-값 변경 후 포커스 아웃,입력값을 대문자로 변환
+      //3.addEventListener-이벤트등록,여러 이벤트 동시 등록 가능
+      //4.onclick-클릭이벤트,한 개만 등록 가능, 덮어쓰면 이전 이벤트 사라짐
+
+      //<p id="demo"> : 클릭하면 메시지가 나타나는 글자
+      //<p id="con"> : 클릭 후 메시지를 보여줄 영역
+      //<input> : 텍스트 입력창, 값 변경 시 이벤트 처리(value="123456" -->자리수를 제한하려면
+      //maxlength="6" 속성을 추가해야 함)
+
+      /* document.querySelector("#demo").onclick = function () {
+        document.querySelector("#con").innerText = "클릭하였습니다.";
+      };*/
+      document.querySelector("#demo").addEventListener("click", function () {
+        document.querySelector("#con").innerText = "클릭하였습니다.";
+      }); //id가 demo인 요소 선택->클릭할 때 실행되는 이벤트 등록->"클릭하였습니다"출력
+      //addEventListener는 여러 개 이벤트 동시에 등록 가능
+
+      document.querySelector("#name").onchange = function () {
+        this.value = this.value.toUpperCase();
+        //#name->텍스트 입력창 선택
+        //onchange → 입력값이 변경되고 엔터 또는 포커스 아웃 될 때 실행
+        //this.value.toUpperCase() → 입력값을 대문자로 변환
+        //즉, 사용자가 abc 입력 → 엔터 누르면 ABC로 바뀜
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      /*document.onkeydown = function (e) {
+        console.log(e.keyCode);//모든 키에 대해 발생 (Shift, Ctrl, 방향키 등 포함),모든 키에 대해 발생 (Shift, Ctrl, 방향키 등 포함)
+      };*/
+      /*document.onkeyup = function (e) {
+        console.log(e.keyCode);//키를 누른 후 손을 뗐을 때 한 번만 발생,반복 입력 안됨
+      };*/
+      document.onkeypress = function (e) {
+        console.log(e.keyCode); //숫자, 문자, Enter 등만 감지 가능(Shift, Ctrl, Alt, 방향키 등은 잡지 못함)
+      };
+    </script>
+  </body>
+</html>

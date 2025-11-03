@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .over {
+        width: 20%;
+        height: 150px;
+        margin: 20px;
+        background: #ccc;
+      }
+      .in {
+        width: 60%;
+        height: 60%;
+        background: #fc0;
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="over">
+      <p>move your mouse</p>
+      <p>0</p>
+      <div class="in">
+        <p>move your mouse</p>
+        <p>0</p>
+      </div>
+    </div>
+    <script>
+      //마우스가 요소 위로 들어오거나 벗어날 때 발생하는 이벤트(mouseenter, mouseleave)를 연습하는 예제
+      let i = 0;
+      let j = 0;
+      document.querySelector(".over").onmouseenter = function () {
+        //마우스가 .over 박스 위로 올라왔을 때 실행
+        document.querySelector(".over>p:first-child").innerText = "mouseenter";
+        //.over의 첫 번째 <p> → "mouseenter"로 바뀜
+        document.querySelector(".over>p:nth-child(2)").innerText = i++;
+        //.over의 두 번째 <p> → 몇 번째 들어왔는지 숫자 증가
+        document.querySelector(".in>p:first-child").innerText = "mouseenter";
+        document.querySelector(".in>p:nth-child(2)").innerText = j++;
+      };
+      /*document.querySelector(".over").onmouseleave = function () {
+        document.querySelector(".over>p:first-child").innerText = "mouseleave";
+        document.querySelector(".in>p:first-child").innerText = "mouseleave";
+      };*/
+
+      /*onmouseleave -하나의 이벤트 핸들러만 연결 가능,
+      addEventListener-같은 이벤트에 여러 개의 함수를 여러 번 등록 가능*/
+
+      document
+        .querySelector(".over")
+        .addEventListener("mouseleave", function () {
+          //마우스가 .over 영역을 완전히 벗어날 때 실행
+          document.querySelector(".over>p:first-child").innerText =
+            "mouseleave";
+          document.querySelector(".in>p:first-child").innerText = "mouseleave";
+          //.over와 .in의 첫 번째 <p>가 "mouseleave"로 바뀜
+        });
+    </script>
+  </body>
+</html>
