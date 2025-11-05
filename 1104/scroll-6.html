@@ -5,26 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      body {
-        margin: 1000px 0;
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #bar {
+        background: #0bd;
+        position: fixed;
+        height: 10px;
+        left: 0;
+        top: 0;
+      }
+      section {
+        height: 2000px;
       }
     </style>
   </head>
   <body>
-    <p>clientX : <input type="text" id="clientX" /></p>
-    <p>clientY : <input type="text" id="clientY" /></p>
-    <p>pageX : <input type="text" id="pageX" /></p>
-    <p>pageY : <input type="text" id="pageY" /></p>
-    <p>screenX : <input type="text" id="screenX" /></p>
-    <p>screenY : <input type="text" id="screenY" /></p>
+    <div id="bar"></div>
+    <section></section>
     <script>
-      document.onmousemove = function (e) {
-        document.querySelector("#clientX").value = e.clientX;
-        document.querySelector("#clientY").value = e.clientY;
-        document.querySelector("#pageX").value = e.pageX;
-        document.querySelector("#pageY").value = e.pageY;
-        document.querySelector("#screenX").value = e.screenX;
-        document.querySelector("#screenY").value = e.screenY;
+      function myscroll() {
+        let scrolled = window.scrollY;
+        //스크롤양
+        console.log(scrolled);
+        let ht = document.documentElement.scrollHeight;
+        //페이지전체높이
+        let viewht = document.documentElement.clientHeight;
+        //표시영역높이
+        console.log(ht);
+        console.log(viewht);
+        let wd = (scrolled / (ht - viewht)) * 100;
+        console.log(wd);
+        document.querySelector("#bar").style.width = `${wd}%`;
+      }
+      window.onscroll = function () {
+        myscroll();
       };
     </script>
   </body>
