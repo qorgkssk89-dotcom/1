@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>starbucks</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      li.menu {
+        background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_bg_251027.jpg);
+      }
+      li.rewards {
+        background-color: #1e3932;
+      }
+      li.bland {
+        background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_promotion_bg_251027.jpg);
+      }
+      li.pick {
+        background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_pick_bg_251027.jpg);
+      }
+      li.magazin {
+        background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2021/reserve_bg_pc.png);
+      }
+      li.every {
+        background-image: url(https://www.starbucks.co.kr/common/img/main/store_bg.jpg);
+      }
+
+      nav {
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+
+      .menu > li {
+        display: inline-block;
+        position: relative;
+        margin: 0 15px;
+      }
+
+      .menu > li > a {
+        display: inline-block;
+        padding: 15px 10px;
+        font-weight: bold;
+      }
+
+      .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        padding: 20px;
+        border-top: 2px solid #006241;
+        width: 600px;
+      }
+
+      .menu > li:hover .submenu {
+        display: block;
+      }
+
+      .submenu h4 {
+        margin: 10px 0 5px;
+        font-size: 14px;
+        color: #006241;
+      }
+
+      .submenu ul li a {
+        font-size: 13px;
+        color: #333;
+      }
+
+      .submenu ul {
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul class="total">
+      <li class="top">
+        <div class="logo">
+          <a href="#"
+            ><img
+              src="https://www.starbucks.co.kr/common/img/common/logo.png"
+              alt="로고"
+          /></a>
+        </div>
+
+        <div class="Submenu">
+          <a href="#">Sign In</a>
+          <a href="#">My Starbucks</a>
+          <a href="#">Customer Service & Ideas</a>
+          <a href="#">Find a Store</a>
+          <a href="#"
+            ><img
+              src="https://image.istarbucks.co.kr/common/img/common/icon_magnifier_black.png"
+              alt="돋보기"
+          /></a>
+        </div>
+
+        <nav>
+          <ul class="menu">
+            <li>
+              <a href="#">COFFEE</a>
+              <div class="submenu">
+                <h4><a href="#">커피스타벅스 원두</a></h4>
+                <ul>
+                  <li><a href="#">비아 스타벅스</a></li>
+                  <li><a href="#">오리가미 스타벅스</a></li>
+                  <li><a href="#">앳홈 캡슐</a></li>
+                </ul>
+
+                <h4><a href="#">어울리는 커피</a></h4>
+                <ul>
+                  <li><a href="#">커피 이야기</a></li>
+                  <li><a href="#">농장에서 우리의 손으로</a></li>
+                  <li><a href="#">최상의 아라비카 원두</a></li>
+                </ul>
+
+                <h4><a href="#">최상의 커피를 즐기는 법</a></h4>
+                <ul>
+                  <li><a href="#">커피 프레스</a></li>
+                  <li><a href="#">푸어 오버</a></li>
+                  <li><a href="#">커피 메이커</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li><a href="#">MENU</a></li>
+            <li><a href="#">STORE</a></li>
+            <li><a href="#">ESG</a></li>
+            <li><a href="#">STARBUCKS REWARDS</a></li>
+            <li><a href="#">CORPORATE SALES</a></li>
+            <li><a href="#">WHAT'S NEW</a></li>
+          </ul>
+        </nav>
+      </li>
+
+      <li class="type">
+        <div class="left">
+          <a href="#">자세히보기</a>
+          <img
+            src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_slogan_251027.png"
+            alt=""
+          />
+        </div>
+        <div class="right">
+          <img
+            src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink04_251027.png"
+            alt=""
+          />
+          <img
+            src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink02_251027.png"
+            alt=""
+          />
+          <img
+            src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink01_251027.png"
+            alt=""
+          />
+          <img
+            src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink03_251027.png"
+            alt=""
+          />
+          <img
+            src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink05_251027.png"
+            alt=""
+          />
+        </div>
+      </li>
+
+      <li class="rewards">
+        <img
+          src="https://image.istarbucks.co.kr/common/img/main/rewards-logo.png"
+          alt=""
+        />
+        <h2>스타벅스만의 특별한 혜택, 스타벅스 리워드</h2>
+        <p>
+          <strong>스타벅스 회원이세요?</strong> 로그인을 통해 나만의 리워드를
+          확인해보세요.<br /><strong>스타벅스 회원이 아니세요?</strong> 가입을
+          통해 리워드 혜택을 즐기세요.
+        </p>
+        <a href="#">회원가입</a>
+        <a href="#">로그인</a>
+        <p></p>
+        <a href="#">스타벅스 모바일 카드 선물하기</a>
+      </li>
+
+      <li class="bland">
+        <img
+          src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_promotion_beans_251027.png"
+          alt=""
+        />
+        <div class="right">
+          <img
+            src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_promotion_txt_mo_251027.png"
+            alt=""
+          />
+          <a href="#">자세히보기</a>
+        </div>
+      </li>
+
+      <li class="pick">
+        <div class="left">
+          <img
+            src="https://image.istarbucks.co.kr/upload/common/img/main/2024/2025_january_pick_txt01.png"
+            alt=""
+          />
+          <h3>다양한메뉴를 스타벅스에서 즐겨보세요</h3>
+          <p>
+            스타벅스만의 특별함을 경험할 수 있는 최상의 선택 음료,<br />
+            스타벅스 커피와 완벽한 어울림을 자랑하는 푸드,<br />다양한 시도와
+            디자인으로 가치를 더하는 상품,<br />소중한 사람에게 마음을 전하는
+            가장 좋은 방법 스타벅스 카드
+          </p>
+        </div>
+        <div class="right">
+          <img
+            src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_pick_img_251027.png"
+            alt=""
+          />
+        </div>
+      </li>
+
+      <li class="magazin">
+        <div class="left">
+          <img
+            src="https://image.istarbucks.co.kr/upload/common/img/etc/reserve_text_pc.png"
+            alt=""
+          />
+          <a href="#">자세히보기</a>
+        </div>
+        <div class="right">
+          <img
+            src="https://image.istarbucks.co.kr/upload/common/img/etc/reserve_visual_m.jpg"
+            alt=""
+          />
+        </div>
+      </li>
+
+      <li class="every">
+        <div class="left">
+          <img
+            src="https://image.istarbucks.co.kr/img/event/2022/221212_main_story_1.png"
+            alt=""
+          />
+          <img
+            src="https://image.istarbucks.co.kr/img/event/2022/221212_main_story_2.png"
+            alt=""
+          />
+        </div>
+        <div class="right">
+          <a href="#">매장찾기</a>
+        </div>
+      </li>
+
+      <li class="bottom">
+        <div class="use">
+          <a href="#">개인정보처리</a>
+          <a href="#">영상정보처리기기 운영관리방침</a>
+          <a href="#">홈페이지 이용약관</a>
+          <a href="#">위치정보 이용약관</a>
+          <a href="#">스타벅스 카드 이용약관</a>
+          <a href="#">스타벅스 유니버스 클럽 이용약관</a>
+          <a href="#">비회원 이용약관</a>
+          <a href="#">My DT Pass 서비스 이용약관</a>
+          <a href="#">윤리경영 핫라인</a>
+        </div>
+        <div class="last">
+          <a href="#">찾아오시는길</a>
+          <a href="#">신규입점제의</a>
+          <a href="#">사이트맵</a>
+        </div>
+        <div class="end">
+          <p>사업자등록번호 : 201-81-21515</p>
+          <p>주식회사 에스씨케이컴퍼니 대표이사 : 손정현</p>
+          <p>TEL : 1522-3232</p>
+          <p>개인정보 보호책임자 : 이찬우</p>
+        </div>
+        <div class="en">
+          <p>ⓒ 2025 Starbucks Coffee Company. All Rights Reserved.</p>
+        </div>
+      </li>
+    </ul>
+  </body>
+</html>
