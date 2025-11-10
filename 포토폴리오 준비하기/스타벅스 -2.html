@@ -14,6 +14,7 @@
       body {
         font-family: Arial, sans-serif;
         color: #333;
+        overflow: visible;
       }
 
       ul.total {
@@ -43,10 +44,16 @@
       }
 
       /* 네비게이션(메뉴) 스타일 - ul/li 중심 구조 적용 */
+
+      header {
+        position: relative;
+        z-index: 10;
+      }
       nav {
-        border-top: 1px solid #eee;
         border-bottom: 1px solid #eee;
         background: #fff;
+        position: relative;
+        z-index: 1000;
       }
       ul.menu {
         list-style: none;
@@ -55,6 +62,17 @@
         justify-content: center;
         align-items: center;
         padding: 14px 10px;
+      }
+      nav ul {
+        position: relative;
+        z-index: 100;
+      }
+      nav ul li {
+        position: relative;
+      }
+      nav ul li:hover .submenu-box {
+        display: flex;
+        gap: 40px; /* 열 간격 */
       }
       ul.menu > li {
         position: relative;
@@ -67,26 +85,26 @@
         display: inline-block;
       }
       a.menu-btn:hover {
-        color: #e85400;
+        color: #1e3932;
       }
 
       /* 서브메뉴 박스 - 전체 너비를 채우는 박스형 */
       .submenu-box {
         position: absolute;
-        top: 100%;
+        top: 100%; /* nav 아래로 바로 붙게 */
+        width: 100vw;
         left: 0;
-        width: 100vw; /* 화면 전체 너비 */
-        background: #2c2a29;
-        color: #fff;
-        opacity: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.4s ease;
-        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.9); /* 반투명 검은 배경 */
+        color: white;
+        display: none;
+        padding: 20px;
+        min-width: 400px;
+        z-index: 9999; /* 메뉴보다 훨씬 위 */
       }
       .submenu-box.active {
         opacity: 1;
-        max-height: 400px;
+        max-height: 600px; /* 충분히 큰 높이로 변경 */
+        padding: 40px 100px; /* 여백 넉넉하게 */
       }
       .submenu-col {
         flex: 1; /* 각 컬럼이 균등 너비로 */
@@ -119,16 +137,16 @@
         margin-bottom: 8px;
       }
       .submenu-col ul li a {
-        color: #e85400;
+        color: #fff;
         text-decoration: none;
         font-size: 14px;
       }
-      /*.submenu-col ul li a:hover {
+      .submenu-col ul li a:hover {
         color: green;
         text-decoration: underline;
       }
 
-     메뉴 hover 액션: li에 마우스 올리면 .submenu-box 보이게 
+      /*메뉴 hover 액션: li에 마우스 올리면 .submenu-box 보이게
       ul.menu > li:hover > .submenu-box {
         display: block;
       }*/

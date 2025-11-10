@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+        margin: 0;
+        background: #000;
+        color: #fff;
+      }
+      .swiper {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 40px;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #444;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 첫 번째 Swiper -->
+    <div class="swiper mySwiper1">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+      </div>
+      <!-- 버튼/페이지네이션 -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- 두 번째 Swiper -->
+    <div class="swiper mySwiper2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide A</div>
+        <div class="swiper-slide">Slide B</div>
+        <div class="swiper-slide">Slide C</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // 첫 번째 슬라이더 (버튼 있음)
+      var swiper1 = new Swiper(".mySwiper1", {
+        navigation: {
+          nextEl: ".mySwiper1 .swiper-button-next",
+          prevEl: ".mySwiper1 .swiper-button-prev",
+        },
+        loop: true,
+      });
+
+      // 두 번째 슬라이더 (페이지네이션 있음)
+      var swiper2 = new Swiper(".mySwiper2", {
+        pagination: {
+          el: ".mySwiper2 .swiper-pagination",
+          clickable: true,
+        },
+        loop: true,
+      });
+    </script>
+  </body>
+</html>
