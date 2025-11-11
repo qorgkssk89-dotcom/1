@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>쿠첸 / Starbucks 연습</title>
+    <title>Starbucks 연습</title>
     <style>
       * {
         margin: 0;
@@ -13,7 +13,7 @@
       }
       body {
         font-family: Arial, sans-serif;
-        color: #333;
+        list-style: none;
         overflow: visible;
       }
 
@@ -39,7 +39,6 @@
         font-size: 14px;
       }
       .Sub a {
-        color: #333;
         text-decoration: none;
       }
 
@@ -47,13 +46,17 @@
 
       header {
         position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
         z-index: 10;
       }
       nav {
         border-bottom: 1px solid #eee;
         background: #fff;
         position: relative;
-        z-index: 1000;
+        z-index: 20;
       }
       ul.menu {
         list-style: none;
@@ -61,7 +64,7 @@
         gap: 18px;
         justify-content: center;
         align-items: center;
-        padding: 14px 10px;
+        padding: 20px 10px;
       }
       nav ul {
         position: relative;
@@ -76,35 +79,40 @@
       }
       ul.menu > li {
         position: relative;
+        color: #2d5c4f;
       }
       a.menu-btn {
         text-decoration: none;
-        color: #222;
+        color: #2d5c4f;
         font-weight: 700;
         padding: 8px 6px;
         display: inline-block;
       }
       a.menu-btn:hover {
-        color: #1e3932;
+        color: #2d5c4f;
+        text-decoration: underline;
       }
 
       /* 서브메뉴 박스 - 전체 너비를 채우는 박스형 */
       .submenu-box {
-        position: absolute;
-        top: 100%; /* nav 아래로 바로 붙게 */
-        width: 100vw;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.9); /* 반투명 검은 배경 */
-        color: white;
-        display: none;
-        padding: 20px;
-        min-width: 400px;
-        z-index: 9999; /* 메뉴보다 훨씬 위 */
+        position: absolute; /* 고정 대신 절대 위치 */
+        top: 100%; /* 메뉴바 바로 아래 */
+        left: 50%;
+        transform: translateX(-50%); /* 브라우저 중앙 기준으로 정렬 */
+        width: 100vw; /* 브라우저 전체 폭 */
+        background-color: rgba(0, 0, 0, 0.9);
+        color: #fff;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.4s ease;
+        z-index: 500;
+        padding: 0;
       }
       .submenu-box.active {
         opacity: 1;
-        max-height: 600px; /* 충분히 큰 높이로 변경 */
-        padding: 40px 100px; /* 여백 넉넉하게 */
+        max-height: 400px;
+        padding: 40px 0;
       }
       .submenu-col {
         flex: 1; /* 각 컬럼이 균등 너비로 */
@@ -115,20 +123,25 @@
       /* 내부 섹션 - h4 제목 + 링크열 */
       .submenu-inner {
         display: flex;
-        justify-content: center; /* 가운데 정렬 */
-        gap: 50px;
-        max-width: 1200px; /* 중앙 콘텐츠 폭 */
+        justify-content: center;
+        gap: 60px;
+        max-width: 1200px;
         margin: 0 auto;
-        height: 100%;
-      }
-      .submenu-col {
-        flex: 1;
-        min-width: 150px;
       }
       .submenu-col h4 {
         color: #fff;
         margin-bottom: 10px;
         font-size: 15px;
+      }
+      .submenu-col h4 a {
+        color: #fff;
+        text-decoration: none; /* 밑줄 제거 */
+        font-weight: bold; /* 제목 강조 */
+        transition: color 0.3s ease;
+      }
+      .submenu-col h4 a:hover {
+        color: #00a862;
+        text-decoration: underline;
       }
       .submenu-col ul {
         list-style: none;
@@ -145,53 +158,174 @@
         color: green;
         text-decoration: underline;
       }
-
-      /*메뉴 hover 액션: li에 마우스 올리면 .submenu-box 보이게
-      ul.menu > li:hover > .submenu-box {
-        display: block;
-      }*/
-
       li.type {
-        height: 450px;
         display: flex;
-        gap: 20px;
-        padding: 30px;
-        background: #fafafa;
-        align-items: center;
+        justify-content: center;
+        align-items: flex-start; /* 위 기준으로 정렬 */
+        gap: 40px;
+        padding: 60px 0;
       }
+      li.type .btn-detail {
+        display: inline-block; /* 블록 느낌으로 패딩 가능 */
+        padding: 10px 20px;
+        border: 2px solid #fff;
+        border-radius: 5px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        margin-bottom: 20px;
+        transition: all 0.3s ease; /* 마우스 오버 시 자연스러운 효과 */
+        position: relative;
+        margin-top: 20px;
+        order: 2;
+      }
+      li.type .btn-detail:hover {
+        color: #ff0408; /* 글씨 주황색 */
+        border-color: #fff; /* 테두리 흰색 유지 */
+        background-color: #fff;
+        transform: translateY(3px);
+      }
+
+      li.type .left {
+        display: flex;
+        flex-direction: column; /* 버튼과 텍스트 수직 정렬 */
+        align-items: center;
+        justify-content: flex-start;
+      }
+
       li.type .left img {
-        max-width: 420px;
-        display: block;
+        max-width: 400px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+      li.type .left .btn-detail {
+        display: inline-block;
+        padding: 10px 24px;
+        border: 2px solid #fff;
+        border-radius: 5px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+      li.type .right {
+        flex: 1 1 300px;
+        display: flex;
+        flex-wrap: wrap; /* 이미지 자동 줄바꿈 */
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
       }
       li.type .right img {
         max-width: 200px;
-        display: inline-block;
-        margin-right: 10px;
+        top: 200px;
+        transform: translateX(-50%);
+        width: 100%;
+        left: 70%;
+        height: auto;
+        display: block;
       }
 
       li.rewards {
-        padding: 28px;
+        display: flex;
+        justify-content: space-between; /* 좌우 간격 */
+        align-items: center; /* 세로 가운데 정렬 */
+        background-color: #1e3932;
+        padding: 30px;
         color: #fff;
-        background: #1e3932;
+        flex-wrap: wrap;
       }
-      li.rewards img {
-        width: 140px;
-        display: block;
-        margin-bottom: 12px;
+      .rewards .left {
+        flex: 0 0 200px; /* 이미지 영역 고정 */
+        text-align: center;
       }
-      li.rewards h2 {
-        font-size: 20px;
-        margin: 10px 0;
-        color: #fff;
+      .rewards .left img {
+        max-width: 100%;
+        height: auto;
       }
-      li.rewards a {
-        color: #fff;
-        text-decoration: underline;
-        display: inline-block;
-        margin-right: 10px;
+      .rewards .right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 30px;
+      }
+      .rewards .top {
+        margin-bottom: 20px;
+      }
+      .rewards .right .top {
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4); /* 흰색 반투명 선 */
+        padding-bottom: 20px; /* 선과 텍스트 사이 여백 */
       }
 
-      li.bland,
+      .rewards .top h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      .rewards .top p {
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+      .rewards .top a {
+        display: inline-block;
+        padding: 8px 16px;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        color: #fff;
+        text-decoration: none;
+        margin-left: 10px; /* 버튼 간 간격 */
+        transition: all 0.3s;
+      }
+
+      .rewards .top a:hover {
+        background-color: #fff;
+        color: #00704a;
+        border: 1px solid #fff;
+      }
+      .rewards .buttons a {
+        display: inline-block;
+        padding: 8px 16px;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        color: #fff;
+        text-decoration: none;
+        margin-top: 10px;
+      }
+      .rewards .buttons a:hover {
+        background-color: #00704a;
+        color: #fff;
+      }
+
+      /* 아래쪽 (모바일카드 안내) */
+      .rewards .bottom p {
+        margin-bottom: 10px;
+        line-height: 1.6;
+      }
+
+      .rewards .bottom a {
+        display: inline-block;
+        padding: 6px 12px;
+        border: 1px solid white;
+        border-radius: 5px;
+        text-decoration: none;
+        color: white;
+        transition: all 0.3s;
+      }
+      .rewards .bottom a:hover {
+        background-color: #00704a;
+        color: white;
+      }
+
+      li.bland {
+        display: flex; /* 내부 요소를 flex로 배치 */
+        justify-content: center; /* 수직 중앙 정렬 */
+        align-items: center; /* 수평 중앙 정렬 */
+        text-align: center; /* 글자 중앙 정렬 */
+        padding: 0; /* 필요 시 패딩 조정 */
+        min-height: 400px;
+      }
       li.pick,
       li.magazin,
       li.every {
@@ -259,6 +393,118 @@
       }
       li.every {
         background-image: url(https://www.starbucks.co.kr/common/img/main/store_bg.jpg);
+      }
+
+      @media (max-width: 480px) {
+        li.type .left img {
+          max-width: 200px;
+        }
+
+        li.type .right img {
+          max-width: 120px;
+        }
+
+        li.type .left a {
+          padding: 8px 16px;
+          font-size: 14px;
+        }
+        li.type {
+          background-position: top center; /* 상단 기준으로 보여주기 */
+          min-height: 400px;
+        }
+      }
+      @media (max-width: 962px) {
+        .right img:first-child {
+          content: url(https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink04_mo_251027.png);
+        }
+        .right img:nth-child(2) {
+          content: url(https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink02_mo_251027.png);
+        }
+        .right img:nth-child(3) {
+          content: url(https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink01_mo_251027.png);
+        }
+        .right img:nth-child(4) {
+          content: url(https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink03_mo_251027.png);
+        }
+        .right img:nth-child(5) {
+          content: url(https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink04_mo_251027.png);
+        }
+      }
+      @media (max-width: 768px) {
+        li.type {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        /* .left 안 버튼을 .right 안으로 이동 */
+        li.type .btn-detail {
+          order: 1; /* 기존 위치 무시 */
+          margin-top: 0;
+        }
+        li.type .left .btn-detail {
+          display: none;
+        }
+        li.type .left {
+          height: 360px; /* 높이 줄이기 */
+        }
+
+        li.type .left img {
+          max-width: 260px;
+          transform: translate(-50%, -50%); /* 중앙 정확히 */
+        }
+
+        li.type .left .btn-detail {
+          transform: translate(-50%, 80px);
+        }
+
+        li.type .right {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: relative;
+        }
+
+        li.type .right::after {
+          content: "";
+        }
+
+        /* 버튼을 right 영역 안에 절대 위치로 배치 */
+        li.type .right {
+          position: relative;
+        }
+
+        li.type .btn-detail {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          margin: 20px 0 0 0;
+        }
+        .rewards {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .rewards .right {
+          padding-left: 0;
+        }
+        .rewards .buttons a {
+          margin-bottom: 8px;
+        }
+        .rewards .top a {
+          border: 1px solid #fff;
+          padding: 6px 12px;
+          border-radius: 4px;
+          text-decoration: none;
+          color: #fff;
+          margin-right: 10px;
+          transition: all 0.3s;
+        }
+
+        .rewards .top a:hover {
+          background-color: #fff;
+          color: #00704a;
+        }
       }
     </style>
   </head>
@@ -587,11 +833,11 @@
       </li>
       <li class="type">
         <div class="left">
-          <a href="#"> 자세히보기</a>
           <img
             src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_slogan_251027.png"
             alt=""
           />
+          <a href="#" class="btn-detail">자세히보기</a>
         </div>
         <div class="right">
           <img
@@ -618,20 +864,34 @@
       </li>
 
       <li class="rewards">
-        <img
-          src="https://image.istarbucks.co.kr/common/img/main/rewards-logo.png"
-          alt=""
-        />
-        <h2>스타벅스만의 특별한 혜택, 스타벅스 리워드</h2>
-        <p>
-          <strong>스타벅스 회원이세요?</strong> 로그인을 통해 나만의 리워드를
-          확인해보세요.<br />
-          <strong>스타벅스 회원이 아니세요?</strong> 가입을 통해 리워드 혜택을
-          즐기세요.
-        </p>
-        <a href="#">회원가입</a>
-        <a href="#">로그인</a>
-        <a href="#">스타벅스 모바일 카드 선물하기</a>
+        <div class="left">
+          <img
+            src="https://image.istarbucks.co.kr/common/img/main/rewards-logo.png"
+            alt=""
+          />
+        </div>
+        <div class="right">
+          <div class="top">
+            <h2>스타벅스만의 특별한 혜택, 스타벅스 리워드</h2>
+            <p>
+              <strong>스타벅스 회원이세요?</strong> 로그인을 통해 나만의
+              리워드를 확인해보세요.<br />
+              <strong>스타벅스 회원이 아니세요?</strong> 가입을 통해 리워드
+              혜택을 즐기세요.
+            </p>
+            <a href="#">회원가입</a>
+            <a href="#">로그인</a>
+          </div>
+          <div class="bottom">
+            <p>
+              회원 가입 후, 스타벅스 모바일 카드를 "나에게 선물하기"로
+              구매하시고, 편리하게 등록하세요!<br />
+              카드를 등록하여 스타벅스 리워드 회원이 되신 후, 첫 구매를 하시면
+              무료 음료쿠폰을 드립니다!
+            </p>
+            <a href="#">스타벅스 모바일 카드 선물하기</a>
+          </div>
+        </div>
       </li>
 
       <li class="bland">
@@ -763,6 +1023,56 @@
             });
           }
         });
+      });
+
+      window.addEventListener("load", () => {
+        const imgs = document.querySelectorAll(".type img");
+
+        imgs.forEach((img, index) => {
+          // 초기 상태 (투명)
+          img.style.opacity = "0";
+          img.style.transition = "opacity 1s ease";
+
+          // 순서대로 하나씩 나타나게
+          setTimeout(() => {
+            img.style.opacity = "1";
+          }, index * 500); // 0.5초 간격으로 하나씩 나타남
+        });
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const typeSection = document.querySelector("li.type");
+        const btn = typeSection.querySelector(".btn-detail");
+        const left = typeSection.querySelector(".left");
+        const right = typeSection.querySelector(".right");
+
+        function moveButton() {
+          // 모바일: 오른쪽 아래로 이동
+          if (window.innerWidth <= 768) {
+            if (left.contains(btn)) {
+              right.appendChild(btn);
+              btn.style.position = "absolute";
+              btn.style.bottom = "10px";
+              btn.style.left = "50%";
+              btn.style.transform = "translateX(-50%)";
+              btn.style.margin = "0";
+            }
+          }
+          // PC: 왼쪽 이미지 아래로 복귀
+          else {
+            if (right.contains(btn)) {
+              left.appendChild(btn);
+              btn.style.position = "relative";
+              btn.style.transform = "none";
+              btn.style.marginTop = "20px";
+            }
+          }
+        }
+
+        // 처음 로드 시 실행
+        moveButton();
+
+        // 화면 크기 변경 시 다시 검사
+        window.addEventListener("resize", moveButton);
       });
     </script>
   </body>
