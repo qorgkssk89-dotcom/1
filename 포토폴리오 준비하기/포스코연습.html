@@ -37,11 +37,15 @@
         height: 40px;
         display: block;
       }
+      nav {
+        position: relative;
+      }
       .top .menu {
         flex-wrap: wrap;
         display: flex;
         gap: 5.75vw;
         align-items: center;
+        list-style: none;
       }
       .top .menu li a {
         font-size: 20px;
@@ -49,6 +53,9 @@
         color: #222;
         position: relative;
         padding-bottom: 5px;
+        text-decoration: none;
+        padding: 10px;
+
         transition: all 0.3s;
       }
       .top .menu li a:hover {
@@ -62,16 +69,75 @@
         width: 100%;
         height: 2px;
         background: #0072ce;
+        transition: width 0.3s ease;
       }
       .top .logo2 img {
         height: 100%;
       } /*백그라운드 이미지*/
+      .sub {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 60px;
+        width: 100%;
+        background: #fff;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        z-index: 10;
+      }
+
+      .sub-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        padding: 40px 20px;
+      }
+
+      .sub-inner ul {
+        flex: 1;
+      }
+
+      .sub-inner li {
+        margin-bottom: 8px;
+      }
+
+      .sub-inner a {
+        position: relative;
+        color: #333;
+        text-decoration: none;
+        padding-bottom: 3px;
+        transition: color 0.3s ease;
+      }
+      .sub-inner a:hover {
+        color: #0072ce;
+      }
+      .sub-inner a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 1px;
+        background: #0072ce;
+        transition: width 0.3s ease;
+      }
+      .sub-inner a:hover::after {
+        width: 100%;
+      }
+      .bg {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
       .bg p {
         background: url("http://www.poscoartmuseum.org/S91_010/S91_010010/common/download/download.jsp?type=media&file=b973afa82069ad5a36903842572286a0.jpg")
           no-repeat center top;
         background-size: cover;
         width: 100%;
-        height: 300px;
+        padding-top: 29.2%; /* 자동 비율 유지 (560 / 1920 = 0.292) */
         display: block;
       }
       .main {
@@ -114,10 +180,12 @@
       }
       .collection .con {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        flex-wrap: nowrap; /* 한 줄로 */
         gap: 20px;
+        overflow-x: auto; /*가로 스크롤 허용 */
+        scroll-behavior: smooth;
       }
+
       .collection h2 {
         font-size: 24px;
         border-bottom: 2px solid #111;
@@ -140,6 +208,8 @@
         text-align: center;
         transition: 0.3s;
         flex: 1 1 calc(25% - 20px);
+        min-width: 280px;
+        flex: 0 0 auto;
       } /*.collection-img:hover { transform: translateY(-4px); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); }*/
       .collection-img img {
         width: 100%;
@@ -312,8 +382,40 @@
     </div>
     <div class="collection">
       <h2>소장품</h2>
-      <span>더보기 > </span>
+      <span class="more">더보기 ></span>
       <div class="con">
+        <div class="collection-img">
+          <img
+            src="http://www.poscoartmuseum.org/S91_010/S91_010010/common/download/download.jsp?type=media&file=4f34314aaf6a24c936903842572286a0.jpg"
+            alt=""
+          />
+          <h3><a href="name">Flowering Structure : Amabel</a></h3>
+          <a href="year"><p>Frank Stella | 1997</p></a>
+        </div>
+        <div class="collection-img">
+          <img
+            src="http://www.poscoartmuseum.org/S91_010/S91_010010/common/download/download.jsp?type=media&file=e899885962c724c936903842572286a0.jpg"
+            alt=""
+          />
+          <h3><a href="name">철이철철:TV깔대기,TV나무</a></h3>
+          <a href="year"><p>백남준 | 1995</p></a>
+        </div>
+        <div class="collection-img">
+          <img
+            src="http://www.poscoartmuseum.org/S91_010/S91_010010/common/download/download.jsp?type=media&file=ed9f396d0e2524c936903842572286a0.jpg"
+            alt=""
+          />
+          <h3><a href="name">Untitled 2014</a></h3>
+          <a href="year"><p>정현 | 2014</p></a>
+        </div>
+        <div class="collection-img">
+          <img
+            src="http://www.poscoartmuseum.org/S91_010/S91_010010/common/download/download.jsp?type=media&file=c7616f9a52ac24c936903842572286a0.jpg"
+            alt=""
+          />
+          <h3><a href="name">Marbotikin Dulda:전설속의 철의섬</a></h3>
+          <a href="year"><p>Frank Stella | 1997</p></a>
+        </div>
         <div class="collection-img">
           <img
             src="http://www.poscoartmuseum.org/S91_010/S91_010010/common/download/download.jsp?type=media&file=4f34314aaf6a24c936903842572286a0.jpg"
@@ -403,5 +505,49 @@
         /></a>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      let hideTimer;
+      $(".menu > li > a").on("mouseenter click", function (e) {
+        e.preventDefault();
+        clearTimeout(hideTimer);
+        $(".sub").stop().slideDown(300);
+      });
+
+      //마우스가 메뉴(nav) 또는 하위(.sub) 안에 있으면 닫히지 않음
+      $("nav, .sub").on("mouseenter", function () {
+        clearTimeout(hideTimer);
+      });
+
+      //마우스가 메뉴(nav)와 하위(.sub) 둘 다 벗어나면 닫기
+      $("nav, .sub").on("mouseleave", function () {
+        hideTimer = setTimeout(function () {
+          $(".sub").stop().slideUp(300);
+        }, 200); // 닫힘 지연 (0.2초)
+      });
+
+      let scrollPos = 0;
+      const container = $(".collection .con");
+      const items = $(".collection-img");
+      const itemWidth = items.outerWidth(true);
+      const totalItems = items.length;
+
+      // 복제해서 뒤에 붙임
+      container.append(items.clone());
+
+      // 클릭 시 이동
+      $(".more").on("click", function () {
+        scrollPos += itemWidth;
+
+        // 애니메이션 이동
+        container.animate({ scrollLeft: scrollPos }, 400, function () {
+          // 복제 끝까지 도달하면 자연스럽게 초기 위치로
+          if (scrollPos >= itemWidth * totalItems) {
+            scrollPos = 0;
+            container.scrollLeft(0);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
