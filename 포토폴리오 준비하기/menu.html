@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      header {
+        background: #f6f5ef;
+        height: 123px;
+        position: relative;
+      }
+      header .head {
+        width: 1100px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header .head .top {
+        margin-right: 45px;
+        /* margin-bottom: 20px; */
+        height: 57px;
+        line-height: 57px;
+      }
+      header .head .top ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+      }
+      header .head nav {
+        height: 66px;
+
+        box-sizing: border-box;
+      }
+      header .head nav > ul.menu {
+        display: flex;
+        justify-content: flex-end;
+        /* gap: 40px; */
+        height: 100%;
+      }
+      header .head nav > ul.menu > li {
+        height: 100%;
+      }
+      header .head nav > ul.menu > li > a {
+        display: block;
+        width: 100%;
+        padding: 10px 20px 0;
+        height: 100%;
+      }
+      header .head nav > ul.menu > li:hover {
+        background: #2c2a29;
+      }
+      header .head nav > ul .submenu-box {
+        position: absolute;
+        left: 0;
+        top: 123px;
+        /* opacity: 0; */
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        background: #2c2a29;
+        transition: 0.5s;
+      }
+      header .head nav > ul .submenu-box.on {
+      }
+      .submenu-inner {
+        width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      $(function () {
+        $("nav .menu>li").hover(
+          function () {
+            let i = $(this).index();
+
+            let ht = $(this).find(".submenu-inner").height();
+            console.log(ht);
+            $(this).find(".submenu-box").height(ht);
+          },
+          function () {
+            $(".submenu-box").height(0);
+          }
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="head">
+        <div class="logo">
+          <p>
+            <img
+              src="https://www.starbucks.co.kr/common/img/common/logo.png"
+              alt=""
+            />
+          </p>
+        </div>
+        <div class="menu">
+          <div class="top">
+            <ul>
+              <li>
+                <a href="#">Sign In</a>
+              </li>
+              <li>
+                <a href="#">My starbucks</a>
+              </li>
+              <li>
+                <a href="#">Customer Service & Ideas</a>
+              </li>
+              <li>
+                <a href="#">Find a store</a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="https://image.istarbucks.co.kr/common/img/common/icon_magnifier_black.png"
+                    alt="돋보기"
+                    width="18"
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <nav>
+            <ul class="menu">
+              <!-- COFFEE (풀 서브메뉴 포함) -->
+              <li>
+                <a href="#" class="menu-btn">COFFEE</a>
+                <div class="submenu-box" aria-hidden="true">
+                  <div class="submenu-inner">
+                    <div class="submenu-col">
+                      <h4><a href="#">커피</a></h4>
+                      <ul>
+                        <li><a href="#">스타벅스 원두</a></li>
+                        <li><a href="#">스타벅스 비아</a></li>
+                        <li><a href="#">스타벅스 오리가미</a></li>
+                        <li><a href="#">스타벅스앳홈 by 캡슐</a></li>
+                        <li><a href="#">나와 어울리는 커피</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">커피 이야기</a></h4>
+                      <ul>
+                        <li><a href="#">농장에서 우리의 손으로</a></li>
+                        <li><a href="#">최상의 아라비카 원두</a></li>
+                        <li><a href="#">스타벅스 로스트 스펙트럼</a></li>
+                        <li><a href="#">스타벅스 디카페인</a></li>
+                        <li><a href="#">스타벅스 리저브</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">에스프레소 음료</a></h4>
+                      <ul>
+                        <li><a href="#">도피오</a></li>
+                        <li><a href="#">에스프레소 마키아또</a></li>
+                        <li><a href="#">아메리카노</a></li>
+                        <li><a href="#">마키아또</a></li>
+                        <li><a href="#">카푸치노</a></li>
+                        <li><a href="#">라떼</a></li>
+                        <li><a href="#">모카</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">최상의 커피를 즐기는 법</a></h4>
+                      <ul>
+                        <li><a href="#">커피 프레스</a></li>
+                        <li><a href="#">푸어 오버</a></li>
+                        <li><a href="#">아이스 푸어 오버</a></li>
+                        <li><a href="#">커피 메이커</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- MENU -->
+              <li>
+                <a href="#" class="menu-btn">MENU</a>
+                <div class="submenu-box" aria-hidden="true">
+                  <div class="submenu-inner">
+                    <div class="submenu-col">
+                      <h4><a href="#">음료</a></h4>
+                      <ul>
+                        <li><a href="#">콜드브루</a></li>
+                        <li><a href="#">브루드커피</a></li>
+                        <li><a href="#">에스프레소</a></li>
+                        <li><a href="#">프라푸치노</a></li>
+                        <li><a href="#">블랜디드</a></li>
+                        <li><a href="#">리프레셔</a></li>
+                        <li><a href="#">티(티바나)</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">푸드</a></h4>
+                      <ul>
+                        <li><a href="#">브레드</a></li>
+                        <li><a href="#">케이크</a></li>
+                        <li><a href="#">샌드위치 & 샐러드</a></li>
+                        <li><a href="#">따뜻한 푸드</a></li>
+                        <li><a href="#">과일 & 요거트</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">상품</a></h4>
+                      <ul>
+                        <li><a href="#">머그</a></li>
+                        <li><a href="#">텀블러</a></li>
+                        <li><a href="#">스테인리스 텀블러</a></li>
+                        <li><a href="#">액세서리</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">카드</a></h4>
+                      <ul>
+                        <li><a href="#">실물카드</a></li>
+                        <li><a href="#">모바일 카드</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- STORE -->
+              <li>
+                <a href="#" class="menu-btn">STORE</a>
+                <div class="submenu-box" aria-hidden="true">
+                  <div class="submenu-inner">
+                    <div class="submenu-col">
+                      <h4><a href="#">매장찾기</a></h4>
+                      <ul>
+                        <li><a href="#">퀵 검색</a></li>
+                        <li><a href="#">지역검색</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">특별 매장</a></h4>
+                      <ul>
+                        <li><a href="#">드라이브 스루 매장</a></li>
+                        <li><a href="#">리저브 매장</a></li>
+                        <li><a href="#">커뮤니티 스토어</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">매장 서비스</a></h4>
+                      <ul>
+                        <li><a href="#">매장 이벤트</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">매장 관련</a></h4>
+                      <ul>
+                        <li><a href="#">리저브 안내</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- ESG -->
+              <li>
+                <a href="#" class="menu-btn">ESG</a>
+                <div class="submenu-box" aria-hidden="true">
+                  <div class="submenu-inner">
+                    <div class="submenu-col">
+                      <h4><a href="#">커뮤니티</a></h4>
+                      <ul>
+                        <li><a href="#">커뮤니티 스토어</a></li>
+                        <li><a href="#">청년 지원 프로그램</a></li>
+                        <li><a href="#">국가유산 지킴이</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">친환경</a></h4>
+                      <ul>
+                        <li><a href="#">다회용컵 캠페인</a></li>
+                        <li><a href="#">커피박 재활용</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">윤리구매</a></h4>
+                      <ul>
+                        <li><a href="#">윤리적 원두 구매</a></li>
+                        <li><a href="#">공정무역</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">ESG 정보</a></h4>
+                      <ul>
+                        <li><a href="#">보고서</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- REWARDS -->
+              <li>
+                <a href="#" class="menu-btn">STARBUCKS REWARDS</a>
+                <div class="submenu-box" aria-hidden="true">
+                  <div class="submenu-inner">
+                    <div class="submenu-col">
+                      <h4><a href="#">리워드</a></h4>
+                      <ul>
+                        <li><a href="#">리워드 소개</a></li>
+                        <li><a href="#">등급 및 혜택</a></li>
+                        <li><a href="#">별 적립 안내</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">카드</a></h4>
+                      <ul>
+                        <li><a href="#">카드 소개</a></li>
+                        <li><a href="#">모바일 카드</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">자주 묻는 질문</a></h4>
+                      <ul>
+                        <li><a href="#">FAQ</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">기타</a></h4>
+                      <ul>
+                        <li><a href="#">선물하기</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- CORPORATE SALES -->
+              <li>
+                <a href="#" class="menu-btn">CORPORATE SALES</a>
+                <div class="submenu-box" aria-hidden="true">
+                  <div class="submenu-inner">
+                    <div class="submenu-col">
+                      <h4><a href="#">단체/기업</a></h4>
+                      <ul>
+                        <li><a href="#">MD 상품</a></li>
+                        <li><a href="#">실물카드</a></li>
+                        <li><a href="#">모바일 카드(BULK)</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">주문 안내</a></h4>
+                      <ul>
+                        <li><a href="#">단체 주문</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">문의</a></h4>
+                      <ul>
+                        <li><a href="#">문의하기</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">자료</a></h4>
+                      <ul>
+                        <li><a href="#">카탈로그</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- WHAT'S NEW -->
+              <li>
+                <a href="#" class="menu-btn">WHAT'S NEW</a>
+                <div class="submenu-box" aria-hidden="true">
+                  <div class="submenu-inner">
+                    <div class="submenu-col">
+                      <h4><a href="#">이벤트</a></h4>
+                      <ul>
+                        <li><a href="#">전체</a></li>
+                        <li><a href="#">온라인 이벤트</a></li>
+                        <li><a href="#">오프라인 이벤트</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">뉴스</a></h4>
+                      <ul>
+                        <li><a href="#">상품 출시</a></li>
+                        <li><a href="#">사회공헌</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">공지사항</a></h4>
+                      <ul>
+                        <li><a href="#">공지</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu-col">
+                      <h4><a href="#">월페이퍼</a></h4>
+                      <ul>
+                        <li><a href="#">다운로드</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="body"></div>
+    </header>
+  </body>
+</html>

@@ -1,139 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-   * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-      body {
-        font-family: Arial, sans-serif;
-        overflow-x: hidden;
-      }
-
-      li.type {
-        background: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_bg_251027.jpg")
-          no-repeat center/cover;
-        height: 650px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 100px;
-      }
-
-      .left {
-        color: #fff;
-        text-align: left;
-      }
-
-      .left img {
-        width: 400px;
-        margin-bottom: 20px;
-      }
-
-      .btn-detail {
-        display: inline-block;
-        border: 1px solid #fff;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 4px;
-        text-decoration: none;
-        font-size: 14px;
-        transition: 0.3s;
-      }
-
-      .btn-detail:hover {
-        background-color: #fff;
-        color: #d31e1e;
-      }
-
-      .right {
-        position: relative;
-        display: flex;
-        align-items: flex-end;
-      }
-
-      .right img {
-        position: relative;
-        transition: 0.4s ease;
-      }
-
-      /* 음료 이미지 각각 위치 조정 */
-      .right img:nth-child(1) {
-        width: 180px;
-        transform: translateY(40px);
-        z-index: 2;
-      }
-
-      .right img:nth-child(2) {
-        width: 210px;
-        margin-left: -30px;
-        z-index: 3;
-      }
-
-      .right img:nth-child(3) {
-        width: 200px;
-        margin-left: -30px;
-        z-index: 4;
-      }
-
-      .right img:nth-child(4) {
-        width: 190px;
-        margin-left: -30px;
-        z-index: 3;
-      }
-
-      .right img:nth-child(5) {
-        width: 180px;
-        margin-left: -30px;
-        z-index: 2;
-        transform: translateY(20px);
-      }
-
-      /* 마우스 올렸을 때 위로 살짝 이동 */
-      .right img:hover {
-        transform: translateY(-20px) scale(1.05);
-        z-index: 10;
-      }
-  </style>
-</head>
-<body>
-  <ul class="top">
-      <li class="type">
-        <div class="left">
-          <img
-            src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_slogan_251027.png"
-            alt=""
-          />
-          <a href="#" class="btn-detail">자세히보기</a>
+  <body>
+    <!-- Swiper -->
+    <div id="con1">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="../Html5&CSS/images/photo1.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../Html5&CSS/images/photo2.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../Html5&CSS/images/photo3.jpg" alt="" />
+          </div>
         </div>
-        <div class="right">
-          <img
-            src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink04_251027.png"
-            alt=""
-          />
-          <img
-            src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink02_251027.png"
-            alt=""
-          />
-          <img
-            src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink01_251027.png"
-            alt=""
-          />
-          <img
-            src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink03_251027.png"
-            alt=""
-          />
-          <img
-            src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink05_251027.png"
-            alt=""
-          />
-        </div>
-      </li>
-</body>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script src="main.js"></script>
+  </body>
 </html>
