@@ -132,6 +132,7 @@
           no-repeat center top;
         background-size: cover;
         display: flex;
+
         align-items: center;
       }
       main section.main .inner {
@@ -191,9 +192,11 @@
         height: 240px;
         background-color: #1e3932;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        position: relative;
-        z-index: 1;
+        /*position: relative;*/
+        padding: 30px 150px;
+        flex-wrap: wrap;
       }
       main section.rewards .rewards-inner {
         width: 1100px;
@@ -210,16 +213,24 @@
       }
       main section.rewards .right {
         color: #fff;
+        display: flex;
+        flex-direction: column;
+        padding-left: 30px;
+      }
+      main section.rewards .right .top {
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        padding-bottom: 20px;
       }
       main section.rewards .right .top h2 {
         font-size: 26px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         font-weight: bold;
       }
       main section.rewards .right .top p {
         font-size: 17px;
         line-height: 1.6;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
       }
       main section.rewards .right .btn-reward {
         border: 1px solid #fff;
