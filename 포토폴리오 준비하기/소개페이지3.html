@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>한나제작소 · Portfolio</title>
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      } /* 전체 스타일 공통 */
+      body {
+        margin: 0;
+        font-family: "Noto Sans KR", sans-serif;
+        color: #444;
+        background: #fff;
+      }
+      section {
+        width: 100%;
+      }
+      .inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      h2 {
+        font-size: 34px;
+        margin-bottom: 40px;
+        text-align: center;
+        color: #444;
+      } /* -------------------- COVER -------------------- */
+      .cover {
+        width: 100%;
+        height: 100vh;
+        background: url("paper.jpg") no-repeat center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .cover::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.25);
+      }
+      .cover-inner {
+        position: relative;
+        text-align: center;
+        z-index: 2;
+        animation: fadeUp 1.7s ease forwards;
+        opacity: 0;
+      }
+      .cover-title {
+        font-size: 44px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 30px;
+        line-height: 1.4;
+        letter-spacing: 2px;
+      }
+      .enter-btn {
+        display: inline-block;
+        padding: 12px 26px;
+        border: 1px solid #fff;
+        border-radius: 30px;
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      .enter-btn:hover {
+        background: #fff;
+        color: #333;
+      }
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      } /* -------------------- ABOUT -------------------- */
+      .about {
+        background: #f7f2e9;
+        padding: 120px 0;
+      }
+      .about .inner {
+        display: flex;
+        gap: 60px;
+        align-items: center;
+      }
+      .profile-img {
+        width: 330px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+      .text-box h2 {
+        font-size: 34px;
+        margin-bottom: 20px;
+      }
+      .text-box p {
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 28px;
+        font-size: 17px;
+      }
+      .tags span {
+        display: inline-block;
+        padding: 8px 16px;
+        border: 1px solid #777;
+        border-radius: 25px;
+        margin-right: 8px;
+        margin-bottom: 10px;
+        font-size: 14px;
+      } /* -------------------- SKILLS -------------------- */
+      .skills {
+        height: 100vh;
+        background: #f7f2e9;
+        padding: 80px 0;
+        display: flex;
+        align-items: flex-start;
+      }
+      .skills-title {
+        font-size: 32px;
+        margin-bottom: 50px;
+        color: #444;
+        text-align: left;
+      } /* 두 칼럼 레이아웃 */
+      .skill-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 100px;
+        margin-bottom: 50px;
+      }
+      .skill-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+      .skill-list li {
+        margin-bottom: 8px;
+        color: #555;
+      }
+      .tool-tags span {
+        display: inline-block;
+        padding: 7px 16px;
+        border-radius: 18px;
+        border: 1px solid #777;
+        margin: 6px;
+        font-size: 14px;
+      } /* 버튼 */
+      .skill-tabs {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-start; /* ★ 추가 */
+        margin-top: 10px;
+      }
+      .tab-btn {
+        padding: 10px 18px;
+        border-radius: 20px;
+        border: 1px solid #444;
+        background: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .tab-btn:hover,
+      .tab-btn.active {
+        background: #444;
+        color: #fff;
+      } /* -------------------- PORTFOLIO -------------------- */
+      .portfolio {
+        background: #f7f2e9;
+        padding: 120px 0;
+        text-align: center;
+      }
+      .swiper {
+        width: 90%;
+        max-width: 900px;
+      }
+      .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+      .pf-img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+      .pf-text h3 {
+        font-size: 24px;
+        margin-bottom: 3px;
+      }
+      .pf-text p {
+        font-size: 16px;
+        color: #555;
+      } /* -------------------- CONTACT -------------------- */
+      .contact {
+        background: #f7f2e9;
+        padding: 120px 0 100px;
+      }
+      .info-box {
+        max-width: 450px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 30px 35px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+      .info-box p {
+        font-size: 17px;
+        margin-bottom: 12px;
+        color: #555;
+      }
+      .copy {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 40px;
+        color: #777;
+      } /* -------------------- -------------------- */
+      .about,
+      .portfolio {
+        height: 100vh;
+        padding: 0;
+        display: flex;
+        align-items: center;
+      }
+      .quick-nav {
+        position: fixed;
+        right: 40px;
+        bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 999;
+      }
+      .quick-nav a {
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 25px;
+        font-size: 14px;
+        text-decoration: none;
+        backdrop-filter: blur(5px);
+        transition: 0.3s;
+      }
+      .quick-nav a:hover {
+        background: #fff;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- COVER -->
+    <section class="cover">
+      <div class="cover-inner">
+        <h1 class="cover-title">한나 제작소에 <br />오신 걸 환영합니다</h1>
+        <a href="#main" class="enter-btn">들어가기</a>
+      </div>
+    </section>
+    <!-- ABOUT -->
+    <section id="main" class="about">
+      <div class="inner">
+        <img src="profile.jpg" class="profile-img" />
+        <div class="text-box">
+          <h2>안녕하세요, 백한나입니다</h2>
+          <p>
+            사용자에게 긍정적인 경험을 주는<br />
+            웹사이트를 만들고 싶은 프론트엔드 입문자입니다.<br />
+            조화로운 UI와 안정적인 기능 구현을 위해 꾸준히 성장하고 있습니다.
+          </p>
+          <div class="tags">
+            <span>#프론트엔드</span> <span>#UIUX</span>
+            <span>#웹퍼블리셔</span> <span>#한나제작소</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SKILLS -->
+    <section id="skills" class="skills">
+      <div class="inner">
+        <h2 class="skills-title">Skills & Tools</h2>
+        <!-- 핵심역량 + 사용도구 두 칼럼 -->
+        <div class="skill-top">
+          <div class="left">
+            <p class="skill-title">핵심 역량</p>
+            <ul class="skill-list">
+              <li>반응형 웹 퍼블리싱</li>
+              <li>UI 구성 & 페이지 설계</li>
+              <li>웹 접근성과 구조 이해</li>
+              <li>HTML · CSS · JavaScript 기초 구현</li>
+            </ul>
+          </div>
+          <div class="right">
+            <p class="skill-title">사용 도구</p>
+            <ul class="skill-list">
+              <li>레이아웃 설계 & 스타일링</li>
+              <li>간단한 인터랙션 구현</li>
+              <li>UI 요소 디자인 및 구성</li>
+              <li>기초적인 웹 구조 이해</li>
+            </ul>
+          </div>
+        </div>
+        <!-- 버튼 -->
+        <div class="skill-tabs">
+          <button class="tab-btn">HTML</button>
+          <button class="tab-btn">CSS</button>
+          <button class="tab-btn">JavaScript</button>
+          <button class="tab-btn">Figma</button>
+          <button class="tab-btn">Photoshop</button>
+          <button class="tab-btn">Illustrator</button>
+        </div>
+      </div>
+    </section>
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="portfolio">
+      <h2>Portfolio Works</h2>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="project1.jpg" class="pf-img" />
+            <div class="pf-text">
+              <h3>Project 1</h3>
+              <p>웹 리디자인 프로젝트</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="project2.jpg" class="pf-img" />
+            <div class="pf-text">
+              <h3>Project 2</h3>
+              <p>개인 포트폴리오 사이트</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="project3.jpg" class="pf-img" />
+            <div class="pf-text">
+              <h3>Project 3</h3>
+              <p>UI/UX 실습 작업물</p>
+            </div>
+          </div>
+        </div>
+        <!-- Swiper navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p
+        class="desc"
+        style="text-align: center; margin-bottom: 40px; color: #666"
+      >
+        포트폴리오를 봐주셔서 감사합니다 :)<br />
+        아래 연락처로 편하게 연락 주세요.
+      </p>
+      <div class="info-box">
+        <p><strong>이름</strong> : 백한나</p>
+        <p><strong>전화번호</strong> : 010-9980-8393</p>
+        <p><strong>이메일</strong> : qorgkssk1228@naver.com</p>
+      </div>
+      <p class="copy">© 2025 HANNA PORTFOLIO. All Rights Reserved.</p>
+    </section>
+    <div class="quick-nav">
+      <a href="#main">ABOUT</a> <a href="#skills">SKILLS</a>
+      <a href="#portfolio">PORTFOLIO</a>
+    </div>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        effect: "slide",
+        centeredSlides: true,
+        slidesPerView: 1,
+        spaceBetween: 40,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: { el: ".swiper-pagination", clickable: true },
+      });
+      $(".tab-btn").click(function () {
+        $(".tab-btn").removeClass("active");
+        $(this).addClass("active");
+        $(".skill-top")
+          .css({ transform: "rotateY(90deg)", opacity: 0 })
+          .animate(
+            { opacity: 1 },
+            {
+              step: function (now) {
+                $(this).css("transform", "rotateY(" + (90 - now * 90) + "deg)");
+              },
+              duration: 500,
+            }
+          );
+      });
+    </script>
+  </body>
+</html>

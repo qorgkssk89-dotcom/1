@@ -4,6 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .img {
+        opacity: 0;
+        transition: 0.8s;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div class="imgs">
+      <img
+        src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink04_251027.png"
+        alt=""
+        class="img"
+        data-num="1"
+      />
+      <img
+        src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink02_251027.png"
+        alt=""
+        class="img"
+        data-num="2"
+      />
+      <img
+        src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink01_251027.png"
+        alt=""
+        class="img"
+        data-num="3"
+      />
+      <img
+        src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink03_251027.png"
+        alt=""
+        class="img"
+        data-num="4"
+      />
+      <img
+        src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink05_251027.png"
+        alt=""
+        class="img"
+        data-num="5"
+      />
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        const order = [3, 4, 2, 1, 5];
+
+        order.forEach((pos, index) => {
+          $(".img")
+            .eq(pos - 1)
+            .delay(index * 600)
+            .animate({ opacity: 1 }, 800);
+        });
+      });
+    </script>
+  </body>
 </html>

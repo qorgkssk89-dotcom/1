@@ -125,6 +125,52 @@
         text-decoration: underline;
       }
       /*  header  완료  */
+
+      section.main {
+        width: 100%;
+        height: 620px;
+        background: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_bg_251027.jpg")
+          no-repeat center top;
+        background-size: 1905px 620px;
+      }
+      section.main .inner {
+        max-width: 1100px;
+        height: 100%;
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      section.main .left {
+        text-align: center; /* 필요에 따라 center로 바꿔도 됨 */
+      }
+
+      /* 왼쪽 이미지 (슬로건 이미지 412x77) */
+      section.main .left img {
+        width: 412px;
+        height: 77px;
+        object-fit: contain;
+        display: block;
+      }
+
+      /* 왼쪽 '자세히보기' 버튼 */
+      section.main .left a {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 8px 22px;
+        font-size: 14px;
+        border: 1px solid #333;
+        border-radius: 20px;
+        color: #333;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      section.main .left a:hover {
+        background: #333;
+        color: #fff;
+      }
     </style>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script>
@@ -471,5 +517,42 @@
         </div>
       </div>
     </header>
+
+    <!--    header 완성됨       -->
+    <main>
+      <section class="main">
+        <div class="inner">
+          <div class="left">
+            <img
+              src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_slogan_251027.png"
+              alt=""
+            />
+            <a href="#" class="btn-detail">자세히보기</a>
+          </div>
+          <div class="right">
+            <img
+              src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink04_251027.png"
+              alt=""
+            />
+            <img
+              src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink02_251027.png"
+              alt=""
+            />
+            <img
+              src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink01_251027.png"
+              alt=""
+            />
+            <img
+              src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink03_251027.png"
+              alt=""
+            />
+            <img
+              src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_drink05_251027.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
