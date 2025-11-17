@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +10,7 @@
         padding: 0;
       }
       body {
+       /
       }
       section {
         height: 100vh;
@@ -23,9 +24,10 @@
       section:nth-child(3) {
         background: #00f;
       }
+      #foot{height: 500px;}
     </style>
+    <link rel="stylesheet" type="text/css" href="examples.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="../jquery-ui.min.js"></script>
     <script>
       $(function () {
         $("section").each(function (k) {
@@ -34,20 +36,21 @@
             let ht = $(window).scrollTop();
             let current = $("section").eq(k);
             if (event.wheelDelta < 0) {
-              //마우스휠 아래로
+              //마우스휠을 아래로
               if ($(current).next() != undefined) {
                 try {
+                  ht = $(current).next().offset().top;
                 } catch (error) {}
               }
             } else {
-              //마우스휠 위로
-              ht = $(current).prev() !=undefined) {
+              //마우스휠을 위로
+              if ($(current).prev() != undefined) {
                 try {
-                  ht = $(current).next().offset().top;
-                }
+                  ht = $(current).prev().offset().top;
+                } catch (error) {}
               }
             }
-              $("html,body").stop().animate({ scrollTop: ht }, 500);
+            $("html,body").stop().animate({ scrollTop: ht }, 1000);
           });
         });
       });
@@ -57,5 +60,7 @@
     <section></section>
     <section></section>
     <section></section>
+
+    <section id="foot"></section>
   </body>
 </html>

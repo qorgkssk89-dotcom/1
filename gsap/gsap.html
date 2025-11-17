@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 50px;
+        height: 50px;
+      }
+      .green {
+        background: green;
+      }
+      .blue {
+        background: blue;
+      }
+
+      .red {
+        background: red;
+      }
+      .pink {
+        background: pink;
+      }
+      .purple {
+        background: purple;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="box green"></div>
+    <div class="box blue"></div>
+    <div class="box red"></div>
+    <div class="box pink"></div>
+    <div class="box purple"></div>
+    <script>
+      gsap.from(".green", {
+        x: 500,
+        duration: 1,
+        rotation: 360,
+        repeat: -1,
+        yoyo: true,
+      });
+      gsap.to(".blue", {
+        x: 400, //400 x축으로 이동
+        duration: 5, //시간
+        transformOrigin: "center 40%",
+        borderRadius: "50%",
+        backgroundColor: "yellow",
+        scale: 2,
+        repeat: -1,
+        yoyo: true,
+        opacity: 0.3,
+      });
+      gsap.from(".pink", {
+        x: 40,
+        backgroundColor: "skyblue",
+        duration: 1.5,
+      });
+      gsap.from(".red", {
+        x: 100,
+
+        y: 500,
+        duration: 6,
+        backgroundColor: "skyblue",
+      });
+      gsap.to(".purple", {
+        duration: 2.5,
+        ease: "power1.out",
+        y: -500,
+      });
+    </script>
+  </body>
+</html>
