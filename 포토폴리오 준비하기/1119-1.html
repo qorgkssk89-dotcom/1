@@ -18,8 +18,13 @@
       header {
         background: #f6f5ef;
         height: 123px;
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2000;
       }
+
       header .head {
         width: 1100px;
         height: 100%;
@@ -83,6 +88,7 @@
         overflow: hidden;
         background: #2c2a29;
         transition: height 0.5s ease;
+        z-index: 1500;
       }
       header .head nav > ul.menu > li > .submenu-box > .submenu-inner {
         width: 1100px;
@@ -127,7 +133,12 @@
       }
       .m-icons {
         display: none;
-      } /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ header 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+      }
+
+      /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ header 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+      main {
+        padding-top: 123px;
+      }
       main section.main {
         width: 100%;
         height: 620px;
@@ -177,18 +188,11 @@
       .main .right .drink img.pc {
         display: block;
         height: 380px;
-        object-fit: contain;
-        /*margin-right: -60px;*/
+        object-fit: contain; /*margin-right: -60px;*/
         margin-right: 0;
         opacity: 0;
         transition: 0.3s;
-      }
-      /*.main .right .drink img.pc {
-                        display: block;
-                      }
-                      .main .right .drink img.mo {
-                        display: none;
-                      }*/
+      } /*.main .right .drink img.pc { display: block; } .main .right .drink img.mo { display: none; }*/
       main section.main .inner .right .drink:nth-child(3) img.pc {
         margin-left: 25px;
       }
@@ -282,7 +286,6 @@
         background-size: 1905px auto;
         position: relative;
       }
-
       section.blend .blend-inner {
         width: 1100px;
         height: 100%;
@@ -292,14 +295,12 @@
         justify-content: flex-start;
         gap: 60px;
       }
-
       section.blend .left img.pc {
         display: block;
         width: 100%;
         height: auto;
         margin-left: 25px;
       }
-
       section.blend .left img.mo {
         display: none;
       }
@@ -310,15 +311,12 @@
         flex-direction: column;
         gap: 30px;
       }
-
       section.blend .right img.pc {
         width: 436px;
       }
-
       section.blend .right img.mo {
         display: none;
       }
-
       section.blend .right .btn-detail {
         padding: 10px 24px;
         border: 2px solid #fff;
@@ -330,13 +328,11 @@
         flex-shrink: 0;
         width: auto;
       }
-
       section.blend .right .btn-detail:hover {
         background: #fff;
         color: red;
         text-decoration: underline;
-      }
-      /* ㅡㅡㅡㅡㅡㅡㅡ section.main-blend 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+      } /* ㅡㅡㅡㅡㅡㅡㅡ section.main-blend 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
       section.christmas {
         width: 100%;
         height: 600px;
@@ -346,7 +342,6 @@
         position: relative;
         overflow: hidden;
       }
-
       section.christmas .christmas-inner {
         width: 1100px;
         margin: 0 auto;
@@ -388,9 +383,7 @@
         max-width: none;
         z-index: 1;
         display: block;
-      }
-      /* ㅡㅡㅡㅡㅡㅡㅡ section.main-christmas 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
-
+      } /* ㅡㅡㅡㅡㅡㅡㅡ section.main-christmas 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
       section.pick {
         width: 100%;
         height: 750px;
@@ -454,7 +447,6 @@
         font-size: 14px;
         transition: 0.3s;
       }
-
       .pick-inner .left .detail-btn-pc:hover {
         background: #fff;
         color: #666;
@@ -470,10 +462,156 @@
         margin-right: -180px;
         margin-top: 0px;
       }
+      .pick-mo-txt {
+        display: none;
+      }
       /* ㅡㅡㅡㅡㅡㅡㅡ section.main-pick 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+      section.last {
+        width: 100%;
+        height: 400px;
+        background: url("https://www.starbucks.co.kr/common/img/main/store_bg.jpg")
+          no-repeat center top;
+        background-size: cover;
+        padding: 0;
+      }
+      section.last .last-inner {
+        width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      section.last .left {
+        position: relative;
+        width: 420px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      section.last .left .back img {
+        width: 366px;
+        display: block;
+      }
+      section.last .left .first {
+        position: absolute;
+        top: 0;
+        left: 150px;
+      }
+      section.last .left .first img {
+        width: 228px;
+        margin-top: 150px;
+      }
+      section.last .right {
+        width: 480px;
+        margin-top: 50px;
+      }
+      section.last .right h1 {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      section.last .right h2 {
+        font-size: 24px;
+        margin-bottom: 18px;
+      }
+      section.last .right .desc {
+        font-size: 17px;
+        line-height: 1.6;
+        margin-bottom: 28px;
+      }
+      section.last .btn-pc {
+        display: inline-block;
+        padding: 10px 24px;
+        border: 3px solid #1e3932;
+        border-radius: 4px;
+        color: #1e3932;
+      }
+      section.last .btn-pc:hover {
+        background: #1e3932;
+        color: #fff;
+        text-decoration: underline;
+      }
+      .mo-txt {
+        display: none;
+      }
+      .btn-mo {
+        display: none;
+      }
+      section.last .btn-mo {
+        display: none;
+      }
+      /* ㅡㅡㅡㅡㅡㅡㅡ section.main-last 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+      footer {
+        width: 100%;
+        background: #333;
+        color: #fff;
+        font-size: 14px;
+      }
+
+      .footer-inner {
+        width: 1100px;
+        margin: 0 auto;
+        padding: 30px 0 40px; /* 패딩 적게 */
+      }
+
+      /* 약관 리스트 */
+      .footer-inner .policy {
+        display: flex;
+        flex-wrap: wrap; /* 자동 줄바꿈 */
+        justify-content: center;
+        gap: 12px 25px; /* 위아래, 좌우 간격 */
+        margin-bottom: 30px;
+      }
+
+      .footer-inner .policy li {
+        white-space: nowrap; /* 글자 줄바꿈 방지 → 요소만 줄바꿈 */
+      }
+
+      .footer-inner .policy li a {
+        color: #fff;
+        opacity: 0.85;
+      }
+
+      .footer-inner .policy li a:hover {
+        opacity: 1;
+        text-decoration: underline;
+      }
+
+      /* 버튼 */
+      .footer-inner .btns {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 25px;
+      }
+
+      .footer-inner .btns .ft-btn {
+        padding: 6px 18px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: transparent;
+        color: #fff;
+        font-size: 13px;
+      }
+      .footer-inner .btns .ft-btn:hover {
+        background: #fff;
+        color: #333;
+        text-decoration: underline;
+      }
+
+      /* info & copy */
+      .footer-inner .info,
+      .footer-inner .copy {
+        text-align: center;
+        opacity: 0.85;
+        font-size: 13px;
+      }
+      /* ㅡㅡㅡㅡㅡㅡㅡ footer  완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
       /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ961 ㅡㅡ*/
-
       @media screen and (min-width: 961px) {
         main section.main .inner .right {
           display: flex;
@@ -483,7 +621,6 @@
           padding-left: 60px;
           gap: 0;
         }
-
         main section.main .inner .right .drink img.pc {
           display: block;
           height: 380px;
@@ -508,8 +645,22 @@
         main section.main .inner .right .btn-right {
           display: none;
         }
-      }
-      /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ960pxㅡㅡㅡ*/
+        .btn-detail.mo-btn {
+          display: none !important;
+        }
+        /*픽섹션 지삭 주기위한코드 지우면안대!!!!!!!!*/
+        section.pick .left {
+          opacity: 1;
+          transform: none;
+        }
+        section.pick .left .title,
+        section.pick .left .top,
+        section.pick .left .bottom,
+        section.pick .left .detail-btn-pc {
+          opacity: 0;
+          transform: translateX(60px);
+        }
+      } /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ960pxㅡㅡㅡ*/
       @media screen and (max-width: 960px) {
         .m-btn {
           display: flex;
@@ -528,6 +679,7 @@
           cursor: pointer;
           z-index: 1000;
         }
+
         .m-btn span {
           display: block;
           width: 24px;
@@ -590,7 +742,23 @@
         .logo img {
           width: 46px;
         }
-
+        .m-nav a {
+          color: #fff !important;
+          font-size: 15px;
+          display: block;
+          padding: 12px 0;
+        }
+        .m-nav .submenu-box a {
+          color: #ccc !important;
+          padding: 10px 0;
+          font-size: 14px;
+        }
+        .m-nav .menu > li > a.active {
+          color: #ffe08c !important;
+        }
+        .m-nav a:hover {
+          color: #ffe08c !important;
+        }
         /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡheader960 끝ㅡㅡ*/
         main section.main {
           height: auto;
@@ -658,13 +826,11 @@
           border-radius: 4px;
           color: #fff;
         }
-
         main section.main .inner .right .btn-detail:hover {
           background: #fff;
           color: #f72525; /* 스타벅스 딥레드 톤 그대로 */
           text-decoration: underline;
-        }
-        /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ.main 960 끝ㅡㅡ*/
+        } /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ.main 960 끝ㅡㅡ*/
         main section.rewards {
           padding: 50px 20px;
           text-align: center;
@@ -713,17 +879,13 @@
         }
         main section.rewards .bottom-left p {
           font-size: 13px;
-        }
-        /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡrewards 960 끝ㅡㅡ*/
+        } /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡrewards 960 끝ㅡㅡ*/
         section.blend {
           height: 900px;
           padding: 30px 20px 40px !important;
-
           background-position: center top;
           background-size: cover;
-        }
-
-        /* PC 레이아웃 → 모바일에서 세로형으로 변경 */
+        } /* PC 레이아웃 → 모바일에서 세로형으로 변경 */
         section.blend .blend-inner {
           width: 100%;
           max-width: 1100px;
@@ -757,14 +919,12 @@
           background: transparent;
           display: inline-block;
           margin: 30px auto 0;
-        }
-        /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡblend  960 끝ㅡㅡ*/
+        } /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡblend 960 끝ㅡㅡ*/
         section.christmas {
           background-image: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/251021_mo_reserve_bg.jpg") !important;
           background-size: cover;
           background-position: center top;
           background-repeat: no-repeat;
-
           height: 900px; /* 공홈과 비슷한 길이 */
           padding-top: 280px; /* 버튼 내려오는 위치 */
           display: flex;
@@ -782,23 +942,18 @@
           display: inline-block;
           position: relative;
           z-index: 10;
-
           margin: 0 auto;
           margin-top: 750px;
-
           padding: 12px 28px;
           border: 2px solid #d0923e;
           border-radius: 4px;
-
           color: #d0923e;
           background: rgba(0, 0, 0, 0.25);
           backdrop-filter: blur(3px);
-
           font-size: 14px;
           letter-spacing: 1px;
           text-align: center;
           text-decoration: none;
-
           transition: 0.3s ease;
           width: fit-content;
           display: block;
@@ -812,46 +967,208 @@
           width: 100%;
           justify-content: center;
           align-items: center;
-        }
-
-        /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡchristmas  960 끝ㅡㅡ*/
-
+        } /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡchristmas 960 끝ㅡㅡ*/
         section.pick {
           width: 100%;
-          padding-top: 100px; /* 위쪽 여백 */
-          padding-bottom: 120px; /* 아래쪽 여백 */
+          padding: 0;
+          height: 1100px !important;
           background-image: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_pick_img_251027.png"),
-            /* 위 오브젝트 */
-              url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_pick_bg_251027.jpg"); /* 아래 텍스처 */
-
-          background-size: contain, cover;
-
-          background-position: top center, center bottom;
-
+            url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_pick_bg_251027.jpg");
           background-repeat: no-repeat, repeat-y;
+          background-size: 420px auto, cover;
+          background-position: center 160px, center bottom;
+          position: relative;
         }
 
-        /* 텍스트, 버튼 모바일에서는 안보임 */
+        /* PICK 내부 정렬 */
+        section.pick .pick-inner {
+          width: 100%;
+          padding-top: 0; /* 여기 0 유지! */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0;
+          position: relative;
+        }
+
+        /* PC 요소 숨기기 */
         section.pick .left,
+        section.pick .right,
         section.pick .detail-btn-pc {
           display: none !important;
         }
 
-        /* 모바일 버튼 */
-        section.pick .pick-btn-mo {
+        /* 모바일 텍스트 그룹 */
+        .mo-text-wrap {
+          padding-top: 390px; /* 텍스트 전체 내려오는 위치 */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0; /* 텍스트 2장 딱 붙게 */
+          z-index: 10;
+        }
+
+        /* 텍스트 이미지 2장 */
+        .pick-mo-txt {
           display: block !important;
-          margin: 0 auto;
-          margin-top: 40px;
-          padding: 12px 30px;
-          border: 2px solid #fff;
-          color: #fff;
-          background: transparent;
+          width: 100%;
+          max-width: 380px;
+          opacity: 0;
+          transform: translateY(40px);
+          margin: 0;
+          z-index: 10;
+          margin-top: 80px;
+        }
+
+        /* 모바일 버튼 */
+        .detail-btn-mo {
+          display: inline-block !important;
+          margin-bottom: 150px;
+          padding: 10px 26px;
+          border: 3px solid #fff;
           border-radius: 4px;
+          color: #fff;
+          background: rgba(0, 0, 0, 0.25);
+          backdrop-filter: blur(3px);
+          font-size: 15px;
+          z-index: 10;
+          transition: 0.3s ease;
+          text-decoration: none;
+        }
+
+        /* 버튼 호버 효과 */
+        .detail-btn-mo:hover {
+          background: #fff;
+          color: #333;
+          text-decoration: underline;
+        }
+
+        /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡpick 960 끝ㅡㅡ*/
+        section.last {
+          width: 100%;
+          height: 750px;
+          background-size: cover;
+          background-position: center top;
+          overflow: hidden;
+        }
+        section.last .last-inner {
+          width: 100%;
+          padding: 0 30px;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        section.last .left {
+          width: 100%;
+          height: auto;
+          position: relative;
+          margin-bottom: 70px;
+        }
+        section.last .left .back img {
+          width: 260px;
+          display: block;
+          margin-top: 0;
+        }
+        section.last .left .first {
+          position: absolute;
+          margin-top: -50px;
+          right: 50%;
+          transform: translateX(55%);
+        }
+
+        section.last .left .first img {
+          width: 200px;
+          display: block;
+        }
+        section.last .right {
+          width: 100%;
+          margin-bottom: 30px;
+          margin-top: 40px;
+        }
+        section.last .right h1,
+        section.last .right h2,
+        section.last .right .desc,
+        section.last .right .btn-pc {
+          display: none !important;
+        }
+        section.last .right .mo-txt {
+          display: block !important;
+          width: 90%;
+          margin: 10px auto 12px;
+        }
+        section.last .right .btn-mo {
+          display: inline-block !important;
+          margin: 20px auto 0;
+          padding: 12px 26px;
+          border: 2px solid #1e3932;
+          border-radius: 4px;
+          background: #e5e4df;
+          color: #1e3932;
           font-size: 15px;
         }
-      }
+        section.last .right .btn-mo:hover {
+          background: #1e3932;
+          color: #fff;
+          text-decoration: underline;
+        }
+        /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡlast 960 끝ㅡㅡ*/
+        .footer-inner {
+          width: 100%;
+          padding: 30px 20px 40px;
+          box-sizing: border-box;
+        }
 
-      /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ480pxㅡㅡㅡ*/
+        /* 약관 리스트(policy) */
+        .footer-inner .policy {
+          justify-content: center;
+          text-align: center;
+          gap: 10px 16px; /* 위아래 10 / 좌우 16 */
+          margin-bottom: 24px;
+        }
+
+        .footer-inner .policy li {
+          white-space: nowrap;
+        }
+
+        .footer-inner .policy li a {
+          font-size: 12px;
+        }
+
+        /* 버튼(btns) */
+        .footer-inner .btns {
+          justify-content: center;
+          text-align: center;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin-bottom: 24px;
+        }
+
+        .footer-inner .btns .ft-btn {
+          font-size: 12px;
+          padding: 6px 14px;
+        }
+
+        /* 사업자 정보(info) */
+        .footer-inner .info {
+          text-align: center;
+          margin-bottom: 14px;
+          line-height: 1.5;
+        }
+
+        .footer-inner .info p {
+          font-size: 12px;
+          margin: 3px 0;
+        }
+
+        /* 카피(copy) */
+        .footer-inner .copy {
+          text-align: center;
+          font-size: 12px;
+          margin-top: 10px;
+        }
+      } /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ480pxㅡㅡㅡ*/
       @media screen and (max-width: 480px) {
         .main {
           padding: 40px 0;
@@ -875,8 +1192,7 @@
           padding: 6px 16px;
           font-size: 13px;
           margin-top: 6px;
-        }
-        /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ.main 480 끝ㅡㅡ*/
+        } /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ.main 480 끝ㅡㅡ*/
         main section.rewards {
           padding: 40px 16px;
         }
@@ -894,8 +1210,7 @@
           padding: 6px 12px;
           font-size: 12px;
           margin: 5px 4px;
-        }
-        /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리워드  끝*/
+        } /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리워드 끝*/
         main section.blend {
           padding: 40px 16px;
         }
@@ -904,7 +1219,6 @@
           align-items: center;
           text-align: center;
         }
-
         main section.blend .right img.mo {
           display: block !important;
           width: 90%;
@@ -916,8 +1230,7 @@
         }
         main section.blend .right .btn-detail {
           margin: 20px auto 0;
-        }
-        /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 블랜드  끝*/
+        } /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 블랜드 끝*/
         main section.christmas {
           padding: 24px 16px;
           background-position: center top;
@@ -932,8 +1245,7 @@
         main section.christmas .left .btn-detail {
           padding: 7px 18px;
           font-size: 13px;
-        }
-        /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 크리스마스  끝*/
+        } /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 크리스마스 끝*/
       }
     </style>
   </head>
@@ -1710,8 +2022,7 @@
         <div class="pick-inner">
           <div class="left">
             <h2 class="title">
-              <span class="pick">PICK</span>
-              <span class="your">YOUR</span>
+              <span class="pick">PICK</span> <span class="your">YOUR</span>
               <span class="favorite">FAVORITE</span>
             </h2>
             <p class="top">
@@ -1727,16 +2038,100 @@
             <a href="#" class="detail-btn-pc">자세히 보기</a>
           </div>
           <div class="right"></div>
+          <div class="mo-text-wrap">
+            <img
+              src="https://image.istarbucks.co.kr/upload/common/img/main/2024/2025_january_pick_txt01_mo.png"
+              alt=""
+              class="pick-mo-txt"
+            />
+            <img
+              src="https://image.istarbucks.co.kr/upload/common/img/main/2024/2025_january_pick_txt02_mo.png"
+              alt=""
+              class="pick-mo-txt"
+            />
+          </div>
           <a href="#" class="detail-btn-mo">자세히 보기</a>
         </div>
       </section>
       <!-- section.pick 완성됨 -->
+      <section class="last">
+        <div class="last-inner">
+          <div class="left">
+            <div class="back">
+              <img
+                src="https://image.istarbucks.co.kr/img/event/2022/221212_main_story_1.png"
+                alt=""
+              />
+            </div>
+            <div class="first">
+              <img
+                src="https://image.istarbucks.co.kr/img/event/2022/221212_main_story_2.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="right">
+            <h1>전국 어디에서나 <strong>스타벅스와 함께!</strong></h1>
+            <h2>스타벅스와 함께 커피 한잔의 여유를 가져보세요.</h2>
+            <p class="desc">
+              나의 취향이 머무는 곳, 스타벅스 <strong>리저브 매장</strong
+              ><br />더욱 편리하게 스타벅스를 만나보는
+              <strong>드라이브 스루 매장</strong><br />함께해서 더 따뜻한
+              지역사회 소통 공간,
+              <strong>커뮤니티 스토어</strong>까지.<br />다양한 스타벅스 매장이
+              여러분을 기다립니다.
+            </p>
+            <img
+              src="https://image.istarbucks.co.kr/img/event/2022/221213_m_main_story_txt_1.png"
+              alt=""
+              class="mo-txt"
+            />
+            <img
+              src="https://image.istarbucks.co.kr/img/event/2022/221212_m_main_story_txt_2.png"
+              alt=""
+              class="mo-txt"
+            />
+            <a href="#" class="btn-pc">매장 찾기</a>
+            <a href="#" class="btn-mo">매장 찾기</a>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="footer-inner">
+          <ul class="policy">
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">영상정보처리기기 운영관리 방침</a></li>
+            <li><a href="#">홈페이지 이용약관</a></li>
+            <li><a href="#">위치정보 이용약관</a></li>
+            <li><a href="#">스타벅스 카드 이용약관</a></li>
+            <li><a href="#">신세계 유니버스 클럽 이용약관</a></li>
+            <li><a href="#">비회원 이용약관</a></li>
+            <li><a href="#">My DT Pass 서비스 이용약관</a></li>
+            <li><a href="#">윤리경영 핫라인</a></li>
+          </ul>
+          <div class="btns">
+            <a href="#" class="ft-btn">찾아오시는 길</a>
+            <a href="#" class="ft-btn">신규입점제의</a>
+            <a href="#" class="ft-btn">사이트 맵</a>
+          </div>
+          <div class="info">
+            <p>사업자등록번호 : 201-81-21515</p>
+            <p>주식회사 에스씨케이컴퍼니 대표이사 : 손정현</p>
+            <p>TEL : 1522-3232</p>
+            <p>개인정보 보호책임자 : 이찬우</p>
+          </div>
+          <div class="copy">
+            <p>ⓒ 2025 Starbucks Coffee Company. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+      <!-- section.last 완성됨 -->
     </main>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-
     <script>
       $(function () {
         $("nav .menu > li").hover(
@@ -1762,7 +2157,6 @@
         $(this).parent().siblings().find(".submenu-box").slideUp();
       });
       //ㅡㅡㅡㅡ메인섹션 스크립ㅡㅡ
-
       $(function () {
         const order = [3, 4, 2, 1, 5];
         order.forEach((pos, index) => {
@@ -1772,9 +2166,7 @@
             .animate({ opacity: 1 }, 800);
         });
       });
-
       //ㅡㅡㅡㅡ메인.블랜드 ScrollTrigger 주기ㅡㅡ
-
       gsap.registerPlugin(ScrollTrigger);
       gsap.from(".blend .left", {
         x: -200,
@@ -1798,6 +2190,134 @@
           trigger: ".blend",
           start: "top 95%",
           markers: true,
+          toggleActions: "play none none none",
+        },
+      });
+      //ㅡㅡㅡㅡ메인.픽 지삭날라오기 ㅡㅡ
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.to("section.pick .title", {
+        x: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "section.pick",
+          start: "top 78%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+      gsap.to("section.pick .top", {
+        x: 0,
+        opacity: 1,
+        duration: 0.9,
+        delay: 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "section.pick",
+          start: "top 78%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+      gsap.to("section.pick .bottom", {
+        x: 0,
+        opacity: 1,
+        duration: 0.9,
+        delay: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "section.pick",
+          start: "top 78%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+
+      gsap.to("section.pick .detail-btn-pc", {
+        x: 0,
+        opacity: 1,
+        duration: 0.9,
+        delay: 0.3,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "section.pick",
+          start: "top 78%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+      gsap.fromTo(
+        "section.pick .pick-mo-txt",
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.0,
+          ease: "power3.out",
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: "section.pick",
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+      //----------------------------------라스트 지삭 효과
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".last .left .back img", {
+        scale: 1.12,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".last",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      });
+      gsap.from(".last .left .first img", {
+        scale: 1.18,
+        opacity: 0,
+        duration: 1.2,
+        delay: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".last",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      });
+      gsap.from(".last .right > *:not(.btn-mo):not(.btn-pc):not(img)", {
+        x: 80,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".last",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+      gsap.from(".last .right .mo-txt", {
+        x: 80,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".last",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+      gsap.from(".last .right .btn-mo, .last .right .btn-pc", {
+        x: 80,
+        opacity: 0,
+        duration: 1,
+        delay: 0.7,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".last",
+          start: "top 80%",
           toggleActions: "play none none none",
         },
       });

@@ -5,942 +5,936 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-          * {
-            margin: 0;
-            padding: 0;
-          }
-          ul {
-            list-style: none;
-          }
-          a {
-            text-decoration: none;
-          }
-          header {
-            background: #f6f5ef;
-            height: 123px;
-            position: relative;
-          }
-          header .head {
-            width: 1100px;
-            height: 100%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-          }
-          header .head .top {
-            margin-right: 45px; /* margin-bottom: 20px; */
-            height: 57px;
-            line-height: 57px;
-            display: block;
-          }
-          header .head .top ul {
-            display: flex;
-            justify-content: flex-end;
-            gap: 20px;
-          }
-          header .head .top ul li a {
-            color: #555;
-            font-size: 13px;
-          }
-          header .head .top ul li a:hover {
-            text-decoration: underline;
-          }
-          header .head nav {
-            height: 66px;
-            box-sizing: border-box;
-          }
-          header .head nav > ul.menu {
-            display: flex;
-            justify-content: flex-end; /* gap: 40px; */
-            height: 100%;
-          }
-          header .head nav > ul.menu > li {
-            height: 100%;
-          }
-          header .head nav > ul.menu > li > a {
-            display: block;
-            width: 100%;
-            padding: 10px 20px 0;
-            height: 100%;
-            color: #333;
-            font-size: 13px;
-          }
-          header .head nav > ul.menu > li:hover > a {
-            color: #fff;
-            text-decoration: underline;
-            text-underline-offset: 6px;
-          }
-          header .head nav > ul.menu > li:hover {
-            background: #2c2a29;
-          }
-          header .head nav > ul.menu > li > .submenu-box {
-            position: absolute;
-            left: 0;
-            top: 123px; /* opacity: 0; */
-            width: 100%;
-            height: 0;
-            overflow: hidden;
-            background: #2c2a29;
-            transition: height 0.5s ease;
-          }
-          header .head nav > ul.menu > li > .submenu-box > .submenu-inner {
-            width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: flex-start;
-            gap: 100px;
-          }
-          header .head nav > ul.menu > li > .submenu-box .submenu-col h4 a {
-            color: #fff;
-            font-size: 13px;
-            display: inline-block;
-            transition: color 0.2s;
-          }
-          header .head nav > ul.menu > li > .submenu-box .submenu-col h4 a:hover {
-            text-decoration: underline;
-            color: #fff;
-          }
-          header .head nav > ul.menu > li > .submenu-box .submenu-col ul li a {
-            color: #b9b9b9;
-            font-size: 12px;
-            transition: color 0.2s;
-          }
-          header
-            .head
-            nav
-            > ul.menu
-            > li
-            > .submenu-box
-            .submenu-col
-            ul
-            li
-            a:hover {
-            color: #fff;
-            text-decoration: underline;
-          }
-          .m-nav {
-            display: none;
-          }
-          .m-btn {
-            display: none;
-          }
-          .m-icons {
-            display: none;
-          } /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ header 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
-          main section.main {
-            width: 100%;
-            height: 620px;
-            background: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_bg_251027.jpg")
-              no-repeat center top;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-          }
-          main section.main .inner {
-            width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-          }
-          main section.main .inner .left {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-          }
-          main section.main .inner .left img {
-            display: block;
-            margin-left: -170px;
-          }
-          main section.main .inner .left .btn-detail {
-            margin-left: -28px;
-            margin-top: 70px;
-            padding: 8px 25px;
-            border: 2px solid #fff;
-            border-radius: 4px;
-            color: #fff;
-            font-size: 14px;
-            transition: 0.3s;
-          }
-          main section.main .inner .left .btn-detail:hover {
-            background: #fff;
-            color: #f72525;
-            text-decoration: underline;
-          }
-          main section.main .inner .right {
-            display: flex;
-            flex-direction: column;
-            padding-right: 40px;
-            padding-left: 60px;
-          }
-          .main .right .drink img.pc {
-            display: block;
-            height: 380px;
-            object-fit: contain;
-            /*margin-right: -60px;*/
-            margin-right: 0;
-            opacity: 0;
-            transition: 0.3s;
-          }
-          /*.main .right .drink img.pc {
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      header {
+        background: #f6f5ef;
+        height: 123px;
+        position: relative;
+      }
+      header .head {
+        width: 1100px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header .head .top {
+        margin-right: 45px; /* margin-bottom: 20px; */
+        height: 57px;
+        line-height: 57px;
+        display: block;
+      }
+      header .head .top ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+      }
+      header .head .top ul li a {
+        color: #555;
+        font-size: 13px;
+      }
+      header .head .top ul li a:hover {
+        text-decoration: underline;
+      }
+      header .head nav {
+        height: 66px;
+        box-sizing: border-box;
+      }
+      header .head nav > ul.menu {
+        display: flex;
+        justify-content: flex-end; /* gap: 40px; */
+        height: 100%;
+      }
+      header .head nav > ul.menu > li {
+        height: 100%;
+      }
+      header .head nav > ul.menu > li > a {
+        display: block;
+        width: 100%;
+        padding: 10px 20px 0;
+        height: 100%;
+        color: #333;
+        font-size: 13px;
+      }
+      header .head nav > ul.menu > li:hover > a {
+        color: #fff;
+        text-decoration: underline;
+        text-underline-offset: 6px;
+      }
+      header .head nav > ul.menu > li:hover {
+        background: #2c2a29;
+      }
+      header .head nav > ul.menu > li > .submenu-box {
+        position: absolute;
+        left: 0;
+        top: 123px; /* opacity: 0; */
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        background: #2c2a29;
+        transition: height 0.5s ease;
+      }
+      header .head nav > ul.menu > li > .submenu-box > .submenu-inner {
+        width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-start;
+        gap: 100px;
+      }
+      header .head nav > ul.menu > li > .submenu-box .submenu-col h4 a {
+        color: #fff;
+        font-size: 13px;
+        display: inline-block;
+        transition: color 0.2s;
+      }
+      header .head nav > ul.menu > li > .submenu-box .submenu-col h4 a:hover {
+        text-decoration: underline;
+        color: #fff;
+      }
+      header .head nav > ul.menu > li > .submenu-box .submenu-col ul li a {
+        color: #b9b9b9;
+        font-size: 12px;
+        transition: color 0.2s;
+      }
+      header
+        .head
+        nav
+        > ul.menu
+        > li
+        > .submenu-box
+        .submenu-col
+        ul
+        li
+        a:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+      .m-nav {
+        display: none;
+      }
+      .m-btn {
+        display: none;
+      }
+      .m-icons {
+        display: none;
+      } /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ header 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+      main section.main {
+        width: 100%;
+        height: 620px;
+        background: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_top_bg_251027.jpg")
+          no-repeat center top;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+      }
+      main section.main .inner {
+        width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      main section.main .inner .left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      main section.main .inner .left img {
+        display: block;
+        margin-left: -170px;
+      }
+      main section.main .inner .left .btn-detail {
+        margin-left: -28px;
+        margin-top: 70px;
+        padding: 8px 25px;
+        border: 2px solid #fff;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 14px;
+        transition: 0.3s;
+      }
+      main section.main .inner .left .btn-detail:hover {
+        background: #fff;
+        color: #f72525;
+        text-decoration: underline;
+      }
+      main section.main .inner .right {
+        display: flex;
+        flex-direction: column;
+        padding-right: 40px;
+        padding-left: 60px;
+      }
+      .main .right .drink img.pc {
+        display: block;
+        height: 380px;
+        object-fit: contain;
+        /*margin-right: -60px;*/
+        margin-right: 0;
+        opacity: 0;
+        transition: 0.3s;
+      }
+      /*.main .right .drink img.pc {
                         display: block;
                       }
                       .main .right .drink img.mo {
                         display: none;
                       }*/
-          main section.main .inner .right .drink:nth-child(3) img.pc {
-            margin-left: 25px;
-          }
-          main section.main .inner .right .drink:nth-child(5) img.pc {
-            height: 300px;
-            margin-right: 40px;
-            margin-top: 100px;
-          } /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ section.main 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
-          main section.rewards {
-            width: 100%;
-            background: #1e3932;
-            padding: 45px 0;
-          }
-          main section.rewards .rewards-inner {
-            width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            align-items: flex-start;
-          }
-          main section.rewards .left img {
-            width: 176px;
-            height: auto;
-            display: block;
-            margin-right: 50px;
-            margin-top: -10px;
-          }
-          main section.rewards .right {
-            color: #fff;
-            flex: 1;
-          }
-          main section.rewards .right .top {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-            padding-bottom: 20px;
-            margin-bottom: 22px;
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-          }
-          main section.rewards .right .top-left h2 {
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            line-height: 1.3;
-          }
-          main section.rewards .right .top-left p {
-            font-size: 15.5px;
-            line-height: 1.45;
-          }
-          main section.rewards .right .top-right {
-            display: flex;
-            gap: 10px;
-            padding-top: 55px;
-          }
-          main section.rewards .right .btn-reward {
-            border: 1px solid #fff;
-            padding: 6px 18px;
-            border-radius: 4px;
-            font-size: 13px;
-            color: #fff;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.25s;
-          }
-          main section.rewards .right .btn-reward:hover {
-            background: #fff;
-            color: #1e3932;
-            text-decoration: underline;
-          }
-          main section.rewards .right .bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-          }
-          main section.rewards .right .bottom-left p {
-            font-size: 13.5px;
-            line-height: 1.55;
-            color: #e7e7e7;
-          }
-          main section.rewards .right .bottom-right {
-            margin-top: -6px;
-          }
-          main section.rewards .right .bottom-right .btn-reward {
-            padding: 6px 18px;
-            font-size: 13px;
-          } /* ㅡㅡㅡㅡㅡㅡㅡ section.main-rewards 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
-          section.blend {
-            width: 100%;
-            height: 578px;
-            background-image: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_promotion_bg_251027.jpg");
-            background-position: center;
-            background-size: 1905px auto;
-            position: relative;
-          }
+      main section.main .inner .right .drink:nth-child(3) img.pc {
+        margin-left: 25px;
+      }
+      main section.main .inner .right .drink:nth-child(5) img.pc {
+        height: 300px;
+        margin-right: 40px;
+        margin-top: 100px;
+      } /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ section.main 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+      main section.rewards {
+        width: 100%;
+        background: #1e3932;
+        padding: 45px 0;
+      }
+      main section.rewards .rewards-inner {
+        width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-start;
+      }
+      main section.rewards .left img {
+        width: 176px;
+        height: auto;
+        display: block;
+        margin-right: 50px;
+        margin-top: -10px;
+      }
+      main section.rewards .right {
+        color: #fff;
+        flex: 1;
+      }
+      main section.rewards .right .top {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        padding-bottom: 20px;
+        margin-bottom: 22px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+      main section.rewards .right .top-left h2 {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+      main section.rewards .right .top-left p {
+        font-size: 15.5px;
+        line-height: 1.45;
+      }
+      main section.rewards .right .top-right {
+        display: flex;
+        gap: 10px;
+        padding-top: 55px;
+      }
+      main section.rewards .right .btn-reward {
+        border: 1px solid #fff;
+        padding: 6px 18px;
+        border-radius: 4px;
+        font-size: 13px;
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        transition: 0.25s;
+      }
+      main section.rewards .right .btn-reward:hover {
+        background: #fff;
+        color: #1e3932;
+        text-decoration: underline;
+      }
+      main section.rewards .right .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      main section.rewards .right .bottom-left p {
+        font-size: 13.5px;
+        line-height: 1.55;
+        color: #e7e7e7;
+      }
+      main section.rewards .right .bottom-right {
+        margin-top: -6px;
+      }
+      main section.rewards .right .bottom-right .btn-reward {
+        padding: 6px 18px;
+        font-size: 13px;
+      } /* ㅡㅡㅡㅡㅡㅡㅡ section.main-rewards 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+      section.blend {
+        width: 100%;
+        height: 578px;
+        background-image: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_promotion_bg_251027.jpg");
+        background-position: center;
+        background-size: 1905px auto;
+        position: relative;
+      }
 
-          section.blend .blend-inner {
-            width: 1100px;
-            height: 100%;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 60px;
-          }
+      section.blend .blend-inner {
+        width: 1100px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 60px;
+      }
 
-          section.blend .left img.pc {
-            display: block;
-            width: 100%;
-            height: auto;
-            margin-left: 25px;
-          }
+      section.blend .left img.pc {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-left: 25px;
+      }
 
-          section.blend .left img.mo {
-            display: none;
-          }
-          section.blend .right {
-            display: flex;
-            width: 450px;
-            align-items: flex-start;
-            flex-direction: column;
-            gap: 30px;
-          }
+      section.blend .left img.mo {
+        display: none;
+      }
+      section.blend .right {
+        display: flex;
+        width: 450px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 30px;
+      }
 
-          section.blend .right img.pc {
-            width: 436px;
-          }
+      section.blend .right img.pc {
+        width: 436px;
+      }
 
-          section.blend .right img.mo {
-            display: none;
-          }
+      section.blend .right img.mo {
+        display: none;
+      }
 
-          section.blend .right .btn-detail {
-            padding: 10px 24px;
-            border: 2px solid #fff;
-            border-radius: 4px;
-            color: #fff;
-            transition: 0.3s;
-            display: inline-block;
-            flex-grow: 0;
-            flex-shrink: 0;
-            width: auto;
-          }
+      section.blend .right .btn-detail {
+        padding: 10px 24px;
+        border: 2px solid #fff;
+        border-radius: 4px;
+        color: #fff;
+        transition: 0.3s;
+        display: inline-block;
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: auto;
+      }
 
-          section.blend .right .btn-detail:hover {
-            background: #fff;
-            color: red;
-            text-decoration: underline;
-          }
-          /* ㅡㅡㅡㅡㅡㅡㅡ section.main-blend 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
-          section.christmas {
-            width: 100%;
-            height: 600px;
-            background: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/251021_pc_reserve_bg.jpg")
-              no-repeat center top;
-            background-size: cover;
-            position: relative;
-            overflow: hidden;
-          }
+      section.blend .right .btn-detail:hover {
+        background: #fff;
+        color: red;
+        text-decoration: underline;
+      }
+      /* ㅡㅡㅡㅡㅡㅡㅡ section.main-blend 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+      section.christmas {
+        width: 100%;
+        height: 600px;
+        background: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/251021_pc_reserve_bg.jpg")
+          no-repeat center top;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+      }
 
-          section.christmas .christmas-inner {
-            width: 1100px;
-            margin: 0 auto;
-            height: 100%;
-            position: relative;
-            z-index: 5;
-          }
-          section.christmas .christmas-inner > img:first-child {
-            width: 430px;
-            position: absolute;
-            left: 100px;
-            top: 200px;
-            display: block;
-          }
-          section.christmas .btn-detail.pc-btn {
-            position: absolute;
-            left: 300px;
-            top: 380px;
-            padding: 10px 24px;
-            border: 1px solid #d0923e;
-            border-radius: 4px;
-            color: #d0923e;
-            background: transparent;
-            text-decoration: none;
-            transition: all 0.35s ease;
-            z-index: 1001;
-          }
-          section.christmas .btn-detail.pc-btn:hover {
-            background: #d0923e;
-            color: #fff;
-            text-decoration: underline;
-            transform: translateY(-3px);
-          }
-          section.christmas .christmas-inner img.pc {
-            position: absolute;
-            right: -350px;
-            bottom: 50px;
-            width: 200%;
-            max-width: none;
-            z-index: 1;
-            display: block;
-          }
-          /* ㅡㅡㅡㅡㅡㅡㅡ section.main-christmas 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+      section.christmas .christmas-inner {
+        width: 1100px;
+        margin: 0 auto;
+        height: 100%;
+        position: relative;
+        z-index: 5;
+      }
+      section.christmas .christmas-inner > img:first-child {
+        width: 430px;
+        position: absolute;
+        left: 100px;
+        top: 200px;
+        display: block;
+      }
+      section.christmas .btn-detail.pc-btn {
+        position: absolute;
+        left: 300px;
+        top: 380px;
+        padding: 10px 24px;
+        border: 1px solid #d0923e;
+        border-radius: 4px;
+        color: #d0923e;
+        background: transparent;
+        text-decoration: none;
+        transition: all 0.35s ease;
+        z-index: 1001;
+      }
+      section.christmas .btn-detail.pc-btn:hover {
+        background: #d0923e;
+        color: #fff;
+        text-decoration: underline;
+        transform: translateY(-3px);
+      }
+      section.christmas .christmas-inner img.pc {
+        position: absolute;
+        right: -350px;
+        bottom: 50px;
+        width: 200%;
+        max-width: none;
+        z-index: 1;
+        display: block;
+      }
+      /* ㅡㅡㅡㅡㅡㅡㅡ section.main-christmas 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
-          section.pick {
-            width: 100%;
-            height: 750px;
-            background: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_pick_bg_251027.jpg")
-              no-repeat center center;
-            background-size: cover;
-            position: relative;
-            overflow: hidden;
-          }
-          .pick-inner {
-            width: 1100px;
-            margin: 0 auto;
-            height: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-          }
-          .pick-inner .left {
-            z-index: 10;
-            color: #fff;
-            padding-top: 40px;
-          }
-          .pick-inner .left h2.title {
-            font-weight: 700;
-            letter-spacing: -1px;
-            line-height: 1.1;
-            margin-bottom: 30px;
-          }
-          .pick-inner .left .title .pick {
-            display: block;
-            font-size: 62px;
-          }
-          .pick-inner .left .title .your {
-            display: block;
-            font-size: 44px;
-            margin-top: 4px;
-          }
-          .pick-inner .left .title .favorite {
-            display: block;
-            font-size: 68px;
-            margin-top: 4px;
-          }
-          .pick-inner .left p.top {
-            font-size: 22px;
-            font-weight: 600;
-            line-height: 1.45;
-            margin-bottom: 18px;
-          }
-          .pick-inner .left p.bottom {
-            font-size: 14.5px;
-            line-height: 1.55;
-            margin-bottom: 35px;
-          }
-          .pick-inner .left .detail-btn-pc {
-            display: inline-block;
-            padding: 10px 26px;
-            border: 3px solid #fff;
-            border-radius: 4px;
-            color: #fff;
-            font-size: 14px;
-            transition: 0.3s;
-          }
-
-          .pick-inner .left .detail-btn-pc:hover {
-            background: #fff;
-            color: #666;
-            text-decoration: underline;
-          }
-          .pick-inner .right {
-            width: 953px;
-            height: 615px;
-            background: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_pick_img_251027.png")
-              no-repeat center center;
-            background-size: contain;
-            position: relative;
-            margin-right: -180px;
-            margin-top: 0px;
-          }
-          /* ㅡㅡㅡㅡㅡㅡㅡ section.main-pick 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
-
-          /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ961 ㅡㅡ*/
-
-          @media screen and (min-width: 961px) {
-            main section.main .inner .right {
-              display: flex;
-              flex-direction: row;
-              align-items: flex-end;
-              padding-right: 40px;
-              padding-left: 60px;
-              gap: 0;
-            }
-
-            main section.main .inner .right .drink img.pc {
-              display: block;
-              height: 380px;
-              object-fit: contain;
-              opacity: 0;
-              transition: 0.3s;
-            }
-            main section.main .inner .right .drink img.mo {
-              display: none;
-            }
-            main section.main .inner .right .drink:nth-child(3) img.pc {
-              margin-left: 25px;
-            }
-            main section.main .inner .right .drink:nth-child(5) img.pc {
-              height: 300px;
-              margin-right: 40px;
-              margin-top: 100px;
-            }
-            main section.main .inner .left .btn-left {
-              display: inline-block;
-            }
-            main section.main .inner .right .btn-right {
-              display: none;
-            }
-          }
-          /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ960pxㅡㅡㅡ*/
-          @media screen and (max-width: 960px) {
-            .m-btn {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              gap: 4px;
-              position: absolute;
-              right: 15px;
-              top: 50%;
-              transform: translateY(-50%);
-              width: 26px;
-              height: 26px;
-              background: none;
-              border: none;
-              cursor: pointer;
-              z-index: 1000;
-            }
-            .m-btn span {
-              display: block;
-              width: 24px;
-              height: 3px;
-              background: #5c4533; /* 스벅 갈색 */
-              border-radius: 3px;
-            }
-            .m-nav {
-              display: block;
-              position: fixed;
-              right: -100%;
-              top: 0;
-              width: 70%;
-              height: 100%;
-              background: #2c2a29;
-              transition: 0.4s;
-              z-index: 999;
-              overflow-y: auto;
-              padding: 40px 20px;
-            }
-            .m-nav.open {
-              right: 0;
-            } /* PC 메뉴는 모바일에서 숨김 */
-            header .head nav {
-              display: none;
-            }
-            header .head .top {
-              display: none !important;
-              position: absolute;
-              right: 60px;
-              top: 20px;
-              gap: 12px;
-              align-items: center;
-            }
-            header .head {
-              padding: 0 20px;
-              width: 100%;
-              justify-content: space-between;
-              box-sizing: border-box;
-            }
-            main .inner {
-              width: auto;
-              padding: 0 20px;
-            }
-            .m-icons {
-              display: flex;
-              align-items: center;
-              gap: 18px;
-              position: absolute;
-              right: 55px;
-              top: 50%;
-              transform: translateY(-50%);
-              z-index: 900;
-            }
-            .m-icons img {
-              width: 22px;
-              filter: invert(29%) sepia(16%) saturate(500%) hue-rotate(348deg)
-                brightness(95%) contrast(85%);
-            }
-            .logo img {
-              width: 46px;
-            }
-
-            /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡheader960 끝ㅡㅡ*/
-            main section.main {
-              height: auto;
-              padding: 40px 0 80px;
-              background-size: cover;
-            }
-            main section.main .inner {
-              width: 100%;
-              padding: 0 20px;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-            }
-            main section.main .inner .left img {
-              width: 260px;
-              margin-left: 0;
-            }
-            main section.main .inner .left .btn-detail {
-              display: none;
-            }
-            main section.main .inner .right {
-              width: 100%;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              gap: 28px;
-              padding: 0;
-              margin: 20px 0 0;
-            }
-            main section.main .inner .right .drink img {
-              margin: 0;
-              padding: 0;
-              height: auto;
-              max-width: 100%;
-              object-fit: contain;
-              opacity: 1;
-            }
-            main section.main .inner .right .drink img.pc {
-              display: none !important;
-            }
-            main section.main .inner .right .drink img.mo {
-              display: block !important;
-              width: 100%;
-              max-width: 600px;
-              height: auto;
-            }
-            main section.main .inner .left .btn-left {
-              display: none !important;
-            }
-            main section.main .inner .right .btn-right {
-              display: block !important;
-              margin-top: 10px;
-              padding: 8px 24px;
-              border: 2px solid #fff;
-              border-radius: 4px;
-              color: #fff;
-              font-size: 14px;
-              text-align: center;
-            }
-            main section.main .inner .right .btn-detail {
-              display: block;
-              margin-top: 10px;
-              padding: 8px 24px;
-              border: 2px solid #fff;
-              border-radius: 4px;
-              color: #fff;
-            }
-
-            main section.main .inner .right .btn-detail:hover {
-              background: #fff;
-              color: #f72525; /* 스타벅스 딥레드 톤 그대로 */
-              text-decoration: underline;
-            }
-            /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ.main 960 끝ㅡㅡ*/
-            main section.rewards {
-              padding: 50px 20px;
-              text-align: center;
-            }
-            main section.rewards .rewards-inner {
-              flex-direction: column;
-              align-items: center;
-              width: 100%;
-            }
-            main section.rewards .left img {
-              width: 140px;
-              margin: 0 auto 24px;
-            }
-            main section.rewards .right {
-              width: 100%;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-            }
-            main section.rewards .right .top {
-              border-bottom: 1px solid #ddd;
-              width: 100%;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              text-align: center;
-            }
-            main section.rewards .right h2 {
-              font-size: 22px;
-              margin-bottom: 12px;
-            }
-            main section.rewards .right p {
-              font-size: 14px;
-              line-height: 1.45;
-            }
-            main section.rewards .btn-reward {
-              display: inline-block;
-              padding: 6px 14px;
-              margin: 6px 4px;
-              font-size: 13px;
-            }
-            main section.rewards .right .bottom {
-              flex-direction: column;
-              align-items: center;
-              gap: 10px;
-            }
-            main section.rewards .bottom-left p {
-              font-size: 13px;
-            }
-            /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡrewards 960 끝ㅡㅡ*/
-            section.blend {
-              height: 900px;
-              padding: 30px 20px 40px !important;
-
-              background-position: center top;
-              background-size: cover;
-            }
-
-            /* PC 레이아웃 → 모바일에서 세로형으로 변경 */
-            section.blend .blend-inner {
-              width: 100%;
-              max-width: 1100px;
-              margin: 0 auto;
-              display: flex;
-              flex-direction: column;
-              justify-content: flex-start;
-              align-items: center;
-              text-align: center;
-              gap: 40px;
-              height: auto;
-            }
-            section.blend .left img.pc,
-            section.blend .right img.pc {
-              display: none !important;
-            }
-            section.blend .left img.mo,
-            section.blend .right img.mo {
-              display: block !important;
-              width: 100%;
-              max-width: 100%;
-              height: auto;
-              margin: 0 auto;
-            }
-            section.blend .right .btn-detail {
-              margin-top: 10px;
-              padding: 10px 24px;
-              font-size: 14px;
-              border: 3px solid #fff;
-              color: #fff;
-              background: transparent;
-              display: inline-block;
-              margin: 30px auto 0;
-            }
-            /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡblend  960 끝ㅡㅡ*/
-            section.christmas {
-              background-image: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/251021_mo_reserve_bg.jpg") !important;
-              background-size: cover;
-              background-position: center top;
-              background-repeat: no-repeat;
-
-              height: 900px; /* 공홈과 비슷한 길이 */
-              padding-top: 280px; /* 버튼 내려오는 위치 */
-              display: flex;
-              justify-content: flex-start;
-              align-items: center;
-              flex-direction: column;
-              position: relative;
-            }
-            section.christmas .pc-title,
-            section.christmas .pc,
-            section.christmas .pc-btn {
-              display: none !important;
-            }
-            section.christmas .btn-detail.mo-btn {
-              display: inline-block;
-              position: relative;
-              z-index: 10;
-
-              margin: 0 auto;
-              margin-top: 750px;
-
-              padding: 12px 28px;
-              border: 2px solid #d0923e;
-              border-radius: 4px;
-
-              color: #d0923e;
-              background: rgba(0, 0, 0, 0.25);
-              backdrop-filter: blur(3px);
-
-              font-size: 14px;
-              letter-spacing: 1px;
-              text-align: center;
-              text-decoration: none;
-
-              transition: 0.3s ease;
-              width: fit-content;
-              display: block;
-            }
-            section.christmas .btn-detail.mo-btn:hover {
-              background: #d0923e;
-              color: #fff;
-              text-decoration: underline;
-            }
-            section.christmas .christmas-inner {
-              width: 100%;
-              justify-content: center;
-              align-items: center;
-            }
-
-            /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡchristmas  960 끝ㅡㅡ*/
-            @media (max-width: 960px) {
       section.pick {
         width: 100%;
-        padding-top: 100px; /* 위쪽 여백 */
-        padding-bottom: 120px; /* 아래쪽 여백 */
-        background-image:
-          url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_pick_img_251027.png"), /* 위 오브젝트 */
-          url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_pick_bg_251027.jpg"); /* 아래 텍스처 */
-
-        background-size:
-          contain,
-          cover;
-
-        background-position:
-          top center,
-          center bottom;
-
-        background-repeat:
-          no-repeat,
-          repeat-y;
+        height: 750px;
+        background: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_pick_bg_251027.jpg")
+          no-repeat center center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
       }
-
-      /* 텍스트, 버튼 모바일에서는 안보임 */
-      section.pick .left,
-      section.pick .detail-btn-pc {
-        display: none !important;
-      }
-
-      /* 모바일 버튼 */
-      section.pick .pick-btn-mo {
-        display: block !important;
+      .pick-inner {
+        width: 1100px;
         margin: 0 auto;
-        margin-top: 40px;
-        padding: 12px 30px;
-        border: 2px solid #fff;
-        color: #fff;
-        background: transparent;
-        border-radius: 4px;
-        font-size: 15px;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
       }
-          }
+      .pick-inner .left {
+        z-index: 10;
+        color: #fff;
+        padding-top: 40px;
+      }
+      .pick-inner .left h2.title {
+        font-weight: 700;
+        letter-spacing: -1px;
+        line-height: 1.1;
+        margin-bottom: 30px;
+      }
+      .pick-inner .left .title .pick {
+        display: block;
+        font-size: 62px;
+      }
+      .pick-inner .left .title .your {
+        display: block;
+        font-size: 44px;
+        margin-top: 4px;
+      }
+      .pick-inner .left .title .favorite {
+        display: block;
+        font-size: 68px;
+        margin-top: 4px;
+      }
+      .pick-inner .left p.top {
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 1.45;
+        margin-bottom: 18px;
+      }
+      .pick-inner .left p.bottom {
+        font-size: 14.5px;
+        line-height: 1.55;
+        margin-bottom: 35px;
+      }
+      .pick-inner .left .detail-btn-pc {
+        display: inline-block;
+        padding: 10px 26px;
+        border: 3px solid #fff;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 14px;
+        transition: 0.3s;
+      }
 
-          /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ480pxㅡㅡㅡ*/
-          @media screen and (max-width: 480px) {
-            .main {
-              padding: 40px 0;
-            }
-            .main .inner {
-              width: 100%;
-              padding: 0 16px;
-            }
-            .main .left img {
-              width: 180px;
-            }
-            .main .right {
-              gap: 8px;
-              margin-top: 10px;
-            }
-            .main .right .drink .mo {
-              width: 320px;
-              height: auto;
-            }
-            main section.main .inner .right .btn-right {
-              padding: 6px 16px;
-              font-size: 13px;
-              margin-top: 6px;
-            }
-            /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ.main 480 끝ㅡㅡ*/
-            main section.rewards {
-              padding: 40px 16px;
-            }
-            main section.rewards .left img {
-              width: 120px;
-              margin-bottom: 20px;
-            }
-            main section.rewards h2 {
-              font-size: 18px;
-            }
-            main section.rewards p {
-              font-size: 13px;
-            }
-            main section.rewards .btn-reward {
-              padding: 6px 12px;
-              font-size: 12px;
-              margin: 5px 4px;
-            }
-            /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리워드  끝*/
-            main section.blend {
-              padding: 40px 16px;
-            }
-            main section.blend .blend-inner {
-              flex-direction: column;
-              align-items: center;
-              text-align: center;
-            }
+      .pick-inner .left .detail-btn-pc:hover {
+        background: #fff;
+        color: #666;
+        text-decoration: underline;
+      }
+      .pick-inner .right {
+        width: 953px;
+        height: 615px;
+        background: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_pick_img_251027.png")
+          no-repeat center center;
+        background-size: contain;
+        position: relative;
+        margin-right: -180px;
+        margin-top: 0px;
+      }
+      /* ㅡㅡㅡㅡㅡㅡㅡ section.main-pick 완료 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
-            main section.blend .right img.mo {
-              display: block !important;
-              width: 90%;
-              max-width: 600px;
-              margin: 0 auto;
-            }
-            main section.blend .right img.pc {
-              display: none !important;
-            }
-            main section.blend .right .btn-detail {
-              margin: 20px auto 0;
-            }
-            /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 블랜드  끝*/
-            main section.christmas {
-              padding: 24px 16px;
-              background-position: center top;
-            }
-            main section.christmas .left img {
-              width: 70%;
-              max-width: 240px;
-            }
-            main section.christmas .christmas-inner .right img {
-              display: none !important;
-            }
-            main section.christmas .left .btn-detail {
-              padding: 7px 18px;
-              font-size: 13px;
-            }
-            /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 크리스마스  끝*/
-          }
+      /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ961 ㅡㅡ*/
+
+      @media screen and (min-width: 961px) {
+        main section.main .inner .right {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+          padding-right: 40px;
+          padding-left: 60px;
+          gap: 0;
+        }
+
+        main section.main .inner .right .drink img.pc {
+          display: block;
+          height: 380px;
+          object-fit: contain;
+          opacity: 0;
+          transition: 0.3s;
+        }
+        main section.main .inner .right .drink img.mo {
+          display: none;
+        }
+        main section.main .inner .right .drink:nth-child(3) img.pc {
+          margin-left: 25px;
+        }
+        main section.main .inner .right .drink:nth-child(5) img.pc {
+          height: 300px;
+          margin-right: 40px;
+          margin-top: 100px;
+        }
+        main section.main .inner .left .btn-left {
+          display: inline-block;
+        }
+        main section.main .inner .right .btn-right {
+          display: none;
+        }
+      }
+      /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ960pxㅡㅡㅡ*/
+      @media screen and (max-width: 960px) {
+        .m-btn {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 4px;
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 26px;
+          height: 26px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          z-index: 1000;
+        }
+        .m-btn span {
+          display: block;
+          width: 24px;
+          height: 3px;
+          background: #5c4533; /* 스벅 갈색 */
+          border-radius: 3px;
+        }
+        .m-nav {
+          display: block;
+          position: fixed;
+          right: -100%;
+          top: 0;
+          width: 70%;
+          height: 100%;
+          background: #2c2a29;
+          transition: 0.4s;
+          z-index: 999;
+          overflow-y: auto;
+          padding: 40px 20px;
+        }
+        .m-nav.open {
+          right: 0;
+        } /* PC 메뉴는 모바일에서 숨김 */
+        header .head nav {
+          display: none;
+        }
+        header .head .top {
+          display: none !important;
+          position: absolute;
+          right: 60px;
+          top: 20px;
+          gap: 12px;
+          align-items: center;
+        }
+        header .head {
+          padding: 0 20px;
+          width: 100%;
+          justify-content: space-between;
+          box-sizing: border-box;
+        }
+        main .inner {
+          width: auto;
+          padding: 0 20px;
+        }
+        .m-icons {
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          position: absolute;
+          right: 55px;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 900;
+        }
+        .m-icons img {
+          width: 22px;
+          filter: invert(29%) sepia(16%) saturate(500%) hue-rotate(348deg)
+            brightness(95%) contrast(85%);
+        }
+        .logo img {
+          width: 46px;
+        }
+
+        /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡheader960 끝ㅡㅡ*/
+        main section.main {
+          height: auto;
+          padding: 40px 0 80px;
+          background-size: cover;
+        }
+        main section.main .inner {
+          width: 100%;
+          padding: 0 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        main section.main .inner .left img {
+          width: 260px;
+          margin-left: 0;
+        }
+        main section.main .inner .left .btn-detail {
+          display: none;
+        }
+        main section.main .inner .right {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 28px;
+          padding: 0;
+          margin: 20px 0 0;
+        }
+        main section.main .inner .right .drink img {
+          margin: 0;
+          padding: 0;
+          height: auto;
+          max-width: 100%;
+          object-fit: contain;
+          opacity: 1;
+        }
+        main section.main .inner .right .drink img.pc {
+          display: none !important;
+        }
+        main section.main .inner .right .drink img.mo {
+          display: block !important;
+          width: 100%;
+          max-width: 600px;
+          height: auto;
+        }
+        main section.main .inner .left .btn-left {
+          display: none !important;
+        }
+        main section.main .inner .right .btn-right {
+          display: block !important;
+          margin-top: 10px;
+          padding: 8px 24px;
+          border: 2px solid #fff;
+          border-radius: 4px;
+          color: #fff;
+          font-size: 14px;
+          text-align: center;
+        }
+        main section.main .inner .right .btn-detail {
+          display: block;
+          margin-top: 10px;
+          padding: 8px 24px;
+          border: 2px solid #fff;
+          border-radius: 4px;
+          color: #fff;
+        }
+
+        main section.main .inner .right .btn-detail:hover {
+          background: #fff;
+          color: #f72525; /* 스타벅스 딥레드 톤 그대로 */
+          text-decoration: underline;
+        }
+        /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ.main 960 끝ㅡㅡ*/
+        main section.rewards {
+          padding: 50px 20px;
+          text-align: center;
+        }
+        main section.rewards .rewards-inner {
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+        main section.rewards .left img {
+          width: 140px;
+          margin: 0 auto 24px;
+        }
+        main section.rewards .right {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        main section.rewards .right .top {
+          border-bottom: 1px solid #ddd;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        main section.rewards .right h2 {
+          font-size: 22px;
+          margin-bottom: 12px;
+        }
+        main section.rewards .right p {
+          font-size: 14px;
+          line-height: 1.45;
+        }
+        main section.rewards .btn-reward {
+          display: inline-block;
+          padding: 6px 14px;
+          margin: 6px 4px;
+          font-size: 13px;
+        }
+        main section.rewards .right .bottom {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+        main section.rewards .bottom-left p {
+          font-size: 13px;
+        }
+        /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡrewards 960 끝ㅡㅡ*/
+        section.blend {
+          height: 900px;
+          padding: 30px 20px 40px !important;
+
+          background-position: center top;
+          background-size: cover;
+        }
+
+        /* PC 레이아웃 → 모바일에서 세로형으로 변경 */
+        section.blend .blend-inner {
+          width: 100%;
+          max-width: 1100px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          text-align: center;
+          gap: 40px;
+          height: auto;
+        }
+        section.blend .left img.pc,
+        section.blend .right img.pc {
+          display: none !important;
+        }
+        section.blend .left img.mo,
+        section.blend .right img.mo {
+          display: block !important;
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+          margin: 0 auto;
+        }
+        section.blend .right .btn-detail {
+          margin-top: 10px;
+          padding: 10px 24px;
+          font-size: 14px;
+          border: 3px solid #fff;
+          color: #fff;
+          background: transparent;
+          display: inline-block;
+          margin: 30px auto 0;
+        }
+        /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡblend  960 끝ㅡㅡ*/
+        section.christmas {
+          background-image: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/251021_mo_reserve_bg.jpg") !important;
+          background-size: cover;
+          background-position: center top;
+          background-repeat: no-repeat;
+
+          height: 900px; /* 공홈과 비슷한 길이 */
+          padding-top: 280px; /* 버튼 내려오는 위치 */
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-direction: column;
+          position: relative;
+        }
+        section.christmas .pc-title,
+        section.christmas .pc,
+        section.christmas .pc-btn {
+          display: none !important;
+        }
+        section.christmas .btn-detail.mo-btn {
+          display: inline-block;
+          position: relative;
+          z-index: 10;
+
+          margin: 0 auto;
+          margin-top: 750px;
+
+          padding: 12px 28px;
+          border: 2px solid #d0923e;
+          border-radius: 4px;
+
+          color: #d0923e;
+          background: rgba(0, 0, 0, 0.25);
+          backdrop-filter: blur(3px);
+
+          font-size: 14px;
+          letter-spacing: 1px;
+          text-align: center;
+          text-decoration: none;
+
+          transition: 0.3s ease;
+          width: fit-content;
+          display: block;
+        }
+        section.christmas .btn-detail.mo-btn:hover {
+          background: #d0923e;
+          color: #fff;
+          text-decoration: underline;
+        }
+        section.christmas .christmas-inner {
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+        }
+
+        /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡchristmas  960 끝ㅡㅡ*/
+
+        section.pick {
+          width: 100%;
+          padding-top: 100px; /* 위쪽 여백 */
+          padding-bottom: 120px; /* 아래쪽 여백 */
+          background-image: url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_pick_img_251027.png"),
+            /* 위 오브젝트 */
+              url("https://image.istarbucks.co.kr/upload/common/img/main/2025/2025_winter_pick_bg_251027.jpg"); /* 아래 텍스처 */
+
+          background-size: contain, cover;
+
+          background-position: top center, center bottom;
+
+          background-repeat: no-repeat, repeat-y;
+        }
+
+        /* 텍스트, 버튼 모바일에서는 안보임 */
+        section.pick .left,
+        section.pick .detail-btn-pc {
+          display: none !important;
+        }
+
+        /* 모바일 버튼 */
+        section.pick .pick-btn-mo {
+          display: block !important;
+          margin: 0 auto;
+          margin-top: 40px;
+          padding: 12px 30px;
+          border: 2px solid #fff;
+          color: #fff;
+          background: transparent;
+          border-radius: 4px;
+          font-size: 15px;
+        }
+      }
+
+      /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ480pxㅡㅡㅡ*/
+      @media screen and (max-width: 480px) {
+        .main {
+          padding: 40px 0;
+        }
+        .main .inner {
+          width: 100%;
+          padding: 0 16px;
+        }
+        .main .left img {
+          width: 180px;
+        }
+        .main .right {
+          gap: 8px;
+          margin-top: 10px;
+        }
+        .main .right .drink .mo {
+          width: 320px;
+          height: auto;
+        }
+        main section.main .inner .right .btn-right {
+          padding: 6px 16px;
+          font-size: 13px;
+          margin-top: 6px;
+        }
+        /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ.main 480 끝ㅡㅡ*/
+        main section.rewards {
+          padding: 40px 16px;
+        }
+        main section.rewards .left img {
+          width: 120px;
+          margin-bottom: 20px;
+        }
+        main section.rewards h2 {
+          font-size: 18px;
+        }
+        main section.rewards p {
+          font-size: 13px;
+        }
+        main section.rewards .btn-reward {
+          padding: 6px 12px;
+          font-size: 12px;
+          margin: 5px 4px;
+        }
+        /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리워드  끝*/
+        main section.blend {
+          padding: 40px 16px;
+        }
+        main section.blend .blend-inner {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        main section.blend .right img.mo {
+          display: block !important;
+          width: 90%;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+        main section.blend .right img.pc {
+          display: none !important;
+        }
+        main section.blend .right .btn-detail {
+          margin: 20px auto 0;
+        }
+        /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 블랜드  끝*/
+        main section.christmas {
+          padding: 24px 16px;
+          background-position: center top;
+        }
+        main section.christmas .left img {
+          width: 70%;
+          max-width: 240px;
+        }
+        main section.christmas .christmas-inner .right img {
+          display: none !important;
+        }
+        main section.christmas .left .btn-detail {
+          padding: 7px 18px;
+          font-size: 13px;
+        }
+        /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 크리스마스  끝*/
+      }
     </style>
   </head>
   <body>
